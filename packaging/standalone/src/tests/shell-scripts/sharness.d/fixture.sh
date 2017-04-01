@@ -1,9 +1,9 @@
 fake_install() {
-  path="neo4j-home"
+  path="neo5j-home"
 
   mkdir -p "${path}/bin"
   cp ../../../main/distribution/shell-scripts/bin/* "${path}/bin" 2>/dev/null
-  chmod +x "${path}/bin/neo4j"
+  chmod +x "${path}/bin/neo5j"
   mkdir -p "${path}/conf"
   mkdir -p "${path}/data/databases"
   mkdir -p "${path}/lib"
@@ -12,23 +12,23 @@ fake_install() {
 }
 
 clear_config() {
-  rm -f neo4j-home/conf/*
+  rm -f neo5j-home/conf/*
 }
 
 set_config() {
   name=$1
   value=$2
   file=$3
-  echo "${name}=${value}" >>"${SHARNESS_TRASH_DIRECTORY}/neo4j-home/conf/${file}"
+  echo "${name}=${value}" >>"${SHARNESS_TRASH_DIRECTORY}/neo5j-home/conf/${file}"
 }
 
 set_main_class() {
   class=$1
-  sed -i.bak -e "s/#{neo4j\.mainClass}/${class}/" neo4j-home/bin/neo4j
+  sed -i.bak -e "s/#{neo5j\.mainClass}/${class}/" neo5j-home/bin/neo5j
 }
 
-neo4j_home() {
-  echo "${SHARNESS_TRASH_DIRECTORY}/neo4j-home"
+neo5j_home() {
+  echo "${SHARNESS_TRASH_DIRECTORY}/neo5j-home"
 }
 
 export JAVA_CMD="$(pwd)/sharness.d/fake-java"

@@ -1,8 +1,8 @@
-Neo4j UDC
+Neo5j UDC
 =========
 
 The Usage Data Collector (UDC) is a kernel extension which collects
-statistics about a Neo4j Server.
+statistics about a Neo5j Server.
 
 For details, please see:
-https://neo4j.com/docs/operations-manual/current/configuration/usage-data-collector/
+https://neo5j.com/docs/operations-manual/current/configuration/usage-data-collector/

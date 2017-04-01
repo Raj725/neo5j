@@ -1,0 +1,2 @@
+org.neo5j.kernel.impl.storemigration.StoreMigrationIT$Standard23Factory
+org.neo5j.kernel.impl.storemigration.StoreMigrationIT$Standard30Factory

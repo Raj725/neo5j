@@ -2,9 +2,9 @@
  * Copyright (c) 2002-2017 "Neo Technology,"
  * Network Engine for Objects in Lund AB [http://neotechnology.com]
  *
- * This file is part of Neo4j.
+ * This file is part of Neo5j.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo5j is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
@@ -22,8 +22,8 @@ package cypher.feature.steps
 import java.util
 
 import cypher.cucumber.BlacklistPlugin.blacklisted
-import org.neo4j.graphdb.{QueryStatistics, Result, Transaction}
-import org.neo4j.kernel.internal.GraphDatabaseAPI
+import org.neo5j.graphdb.{QueryStatistics, Result, Transaction}
+import org.neo5j.kernel.internal.GraphDatabaseAPI
 
 import scala.util.{Failure, Success, Try}
 

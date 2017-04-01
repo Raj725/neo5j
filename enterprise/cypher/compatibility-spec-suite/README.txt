@@ -15,9 +15,9 @@ An example of a configuration is the following (as of 2016-03-18):
 
 Main Class:	cucumber.api.cli.Main
 Glue:	cypher
-Feature or folder path:	/path/to/neo4j/checkout/community/cypher/compatibility-suite/src/test/resources/cypher/
+Feature or folder path:	/path/to/neo5j/checkout/community/cypher/compatibility-suite/src/test/resources/cypher/
 VM options:
 Program arguments:	 --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --plugin cypher.cucumber.db.DatabaseProvider:target/dbs --plugin cypher.cucumber.db.DatabaseConfigProvider:/cypher/db/config/${YOUR_CONFIG_HERE}.json  --plugin cypher.feature.reporting.CypherResultReporter:target/reporter-output --monochrome
 Working directory:
 Enviroment variables:
-Use classpath of module:	neo4j-cypher-compatibility-suite
+Use classpath of module:	neo5j-cypher-compatibility-suite

@@ -1,19 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
-  <groupId>org.neo4j.build</groupId>
+  <groupId>org.neo5j.build</groupId>
   <artifactId>licensecheck-config</artifactId>
   <version>3.2.0-SNAPSHOT</version>
 
-  <name>Neo4j - Licensing configuration</name>
-  <description>Licensing configuration for the Neo4j project.</description>
+  <name>Neo5j - Licensing configuration</name>
+  <description>Licensing configuration for the Neo5j project.</description>
   <packaging>jar</packaging>
-  <url>http://components.neo4j.org/${project.artifactId}</url>
+  <url>http://components.neo5j.org/${project.artifactId}</url>
 
   <properties>
     <short-name>licenses</short-name>
@@ -23,9 +23,9 @@
   </properties>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <licenses>
@@ -50,9 +50,9 @@
 
   <developers>
     <developer>
-      <id>neo4j</id>
-      <name>The Neo4j Team</name>
-      <url>http://neo4j.org/</url>
+      <id>neo5j</id>
+      <name>The Neo5j Team</name>
+      <url>http://neo5j.org/</url>
       <organization>Neo Technology</organization>
       <organizationUrl>http://www.neotechnology.com/</organizationUrl>
     </developer>
@@ -61,7 +61,7 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.neo4j.build.plugins</groupId>
+        <groupId>org.neo5j.build.plugins</groupId>
         <artifactId>license-maven-plugin</artifactId>
         <configuration>
           <skip>true</skip>

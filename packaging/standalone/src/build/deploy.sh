@@ -4,7 +4,7 @@
 rootpathdist=dist
 
 function work {
-    upload_packages neo4j-community neo4j-enterprise
+    upload_packages neo5j-community neo5j-enterprise
 }
 
 function run_command {
@@ -25,7 +25,7 @@ function fetch_artifact {
 
 function upload_file {
     filename=$1
-    run_command "s3cmd put --acl-public --guess-mime-type $filename s3://dist.neo4j.org/$filename"
+    run_command "s3cmd put --acl-public --guess-mime-type $filename s3://dist.neo5j.org/$filename"
 }
 
 function upload_package {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
@@ -10,25 +10,25 @@
   <properties>
     <short-name>resource</short-name>
     <version-package>resource.impl</version-package>
-    <bundle.namespace>org.neo4j.graphdb</bundle.namespace>
+    <bundle.namespace>org.neo5j.graphdb</bundle.namespace>
     <license-text.header>GPL-3-header.txt</license-text.header>
     <licensing.prepend.text>notice-gpl-prefix.txt</licensing.prepend.text>
   </properties>
 
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>neo4j-resource</artifactId>
-  <groupId>org.neo4j</groupId>
+  <artifactId>neo5j-resource</artifactId>
+  <groupId>org.neo5j</groupId>
   <version>3.2.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
-  <name>Neo4j - Resource interface</name>
-  <description>Resource interface for Neo4j.</description>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <name>Neo5j - Resource interface</name>
+  <description>Resource interface for Neo5j.</description>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <licenses>

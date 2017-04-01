@@ -4,24 +4,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>cypher-enterprise-parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../</relativePath>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>neo4j-cypher-compatibility-spec-suite</artifactId>
+  <artifactId>neo5j-cypher-compatibility-spec-suite</artifactId>
   <packaging>jar</packaging>
   <version>3.2.0-SNAPSHOT</version>
-  <name>Neo4j - Cypher Compatibility Specification Suite</name>
-  <description>Neo4j query language compatibility suite</description>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <name>Neo5j - Cypher Compatibility Specification Suite</name>
+  <description>Neo5j query language compatibility suite</description>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <licenses>
@@ -52,9 +52,9 @@
 
   <repositories>
     <repository>
-      <id>neo4j-releases-repository</id>
-      <name>Neo4j Maven 2 releases repository</name>
-      <url>http://m2.neo4j.org/content/repositories/releases/</url>
+      <id>neo5j-releases-repository</id>
+      <name>Neo5j Maven 2 releases repository</name>
+      <url>http://m2.neo5j.org/content/repositories/releases/</url>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
@@ -124,71 +124,71 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- neo4j -->
+    <!-- neo5j -->
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-cypher</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-cypher</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-cypher-spec-suite-tools</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-cypher-spec-suite-tools</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-enterprise-cypher</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-enterprise-cypher</artifactId>
       <version>${project.version}</version>
     </dependency>
 
-    <!-- neo4j testing -->
+    <!-- neo5j testing -->
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-enterprise-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-enterprise-kernel</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-io</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-io</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-cypher</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-cypher</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-enterprise-cypher</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-enterprise-cypher</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-cypher-spec-suite-tools</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-cypher-spec-suite-tools</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>

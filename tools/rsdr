@@ -1,6 +1,6 @@
 #!/bin/bash
-# The Neo4j Raw Store Diagnostics Reader
+# The Neo5j Raw Store Diagnostics Reader
 
 mvn -nsu dependency:copy-dependencies
 
-java -cp "target/dependency/*:target/classes" org.neo4j.tools.rawstorereader.RsdrMain $*
+java -cp "target/dependency/*:target/classes" org.neo5j.tools.rawstorereader.RsdrMain $*

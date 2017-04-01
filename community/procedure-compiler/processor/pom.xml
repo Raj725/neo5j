@@ -2,23 +2,23 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.neo4j</groupId>
+        <groupId>org.neo5j</groupId>
         <artifactId>parent</artifactId>
         <version>3.2.0-SNAPSHOT</version>
         <relativePath>../../..</relativePath>
     </parent>
 
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>procedure-compiler</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Neo4j - Procedure Compiler Core</name>
-    <description>Neo4j Stored Procedure compile-time annotation processor</description>
+    <name>Neo5j - Procedure Compiler Core</name>
+    <description>Neo5j Stored Procedure compile-time annotation processor</description>
 
     <properties>
         <short-name>procedure-compiler</short-name>
-        <bundle.namespace>org.neo4j.tooling.procedure</bundle.namespace>
+        <bundle.namespace>org.neo5j.tooling.procedure</bundle.namespace>
         <license-text.header>GPL-3-header.txt</license-text.header>
         <licensing.prepend.text>notice-gpl-prefix.txt</licensing.prepend.text>
         <version-package>tooling.procedure</version-package>
@@ -46,8 +46,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j</artifactId>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
@@ -81,7 +81,7 @@
             <testResource>
                 <directory>src/test/java</directory>
                 <includes>
-                    <include>org/neo4j/tooling/procedure/procedures/**/*.java</include>
+                    <include>org/neo5j/tooling/procedure/procedures/**/*.java</include>
                 </includes>
             </testResource>
         </testResources>
@@ -111,7 +111,7 @@
                         </goals>
                         <configuration>
                             <includes>
-                                <include>org/neo4j/tooling/procedure/procedures/valid/**/*</include>
+                                <include>org/neo5j/tooling/procedure/procedures/valid/**/*</include>
                             </includes>
                         </configuration>
                     </execution>

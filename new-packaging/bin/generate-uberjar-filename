@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eu
 # generate-uberjar-filename:
-# Generate Neo4j Desktop uberjar filename from version
+# Generate Neo5j Desktop uberjar filename from version
 
 if [ $# -ne 1 ]
 then
@@ -13,4 +13,4 @@ version_file=${1}
 
 version=$(cat ${version_file})
 
-echo "../packaging/neo4j-desktop/target/neo4j-desktop-${version}.jar"
+echo "../packaging/neo5j-desktop/target/neo5j-desktop-${version}.jar"

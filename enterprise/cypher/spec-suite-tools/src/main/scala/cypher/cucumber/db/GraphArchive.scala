@@ -2,9 +2,9 @@
  * Copyright (c) 2002-2017 "Neo Technology,"
  * Network Engine for Objects in Lund AB [http://neotechnology.com]
  *
- * This file is part of Neo4j.
+ * This file is part of Neo5j.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo5j is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
@@ -23,7 +23,7 @@ import cypher.cucumber.db.GraphArchive.Use.{Updating, ReadOnly}
 import cypher.cucumber.db.GraphRecipe.CypherScript
 import org.json4s.JsonAST.JString
 import org.json4s.{CustomSerializer, Formats}
-import org.neo4j.kernel.internal.Version
+import org.neo5j.kernel.internal.Version
 
 import scala.reflect.io.File
 
@@ -90,7 +90,7 @@ object GraphRecipe {
     val uniqueNodeProperties = allUniqueNodeProperties.filter(!allUniqueNodeProperties.coveredByImpliedLabel(_)).properties
     val indexedNodeProperties = allIndexedNodeProperties.filter(entry => !allIndexedNodeProperties.coveredByImpliedLabel(entry) && !uniqueNodeProperties(entry)).properties
 
-    // Neo4j disk size estimation
+    // Neo5j disk size estimation
     val nodeSize = nodes.find(i => i.label == "" && i.key == "").map(_.count * 14).get
     val nodePropertySize = nodes.filter(i => i.label == "" && i.key != "").map(_.count * 41).sum
     val relationshipSize = relationships.find(i => i.`type` == "" && i.key == "").map(_.count * 33).get

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
@@ -9,24 +9,24 @@
 
   <properties>
     <short-name>csv</short-name>
-    <bundle.namespace>org.neo4j.csv</bundle.namespace>
+    <bundle.namespace>org.neo5j.csv</bundle.namespace>
     <license-text.header>GPL-3-header.txt</license-text.header>
     <licensing.prepend.text>notice-gpl-prefix.txt</licensing.prepend.text>
   </properties>
 
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>neo4j-csv</artifactId>
+  <artifactId>neo5j-csv</artifactId>
   <version>3.2.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
-  <name>Neo4j - CSV reading and parsing</name>
+  <name>Neo5j - CSV reading and parsing</name>
   <description>Efficient reading and parsing of CSV input streams.</description>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <licenses>
@@ -56,20 +56,20 @@ the relevant Commercial Agreement.
       <artifactId>annotations</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-primitive-collections</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-primitive-collections</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-collections</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-collections</artifactId>
       <version>${project.version}</version>
     </dependency>
 
     <!-- test dependencies -->
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-io</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-io</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
@@ -79,8 +79,8 @@ the relevant Commercial Agreement.
       <artifactId>commons-codec</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-io</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-io</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
     </dependency>

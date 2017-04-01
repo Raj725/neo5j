@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-test_description="Test running neo4j-backup"
+test_description="Test running neo5j-backup"
 
 . ./lib/sharness.sh
 fake_install
 
 test_expect_success "should invoke backup main class" "
-  neo4j-home/bin/neo4j-backup || true &&
-  test_expect_java_arg 'org.neo4j.backup.BackupTool'
+  neo5j-home/bin/neo5j-backup || true &&
+  test_expect_java_arg 'org.neo5j.backup.BackupTool'
 "
 
 test_done

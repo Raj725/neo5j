@@ -1,4 +1,4 @@
-# Parse the version from a neo4j tarball like 'neo4j-community-3.2.0-SNAPSHOT-unix.tar.gz'
+# Parse the version from a neo5j tarball like 'neo5j-community-3.2.0-SNAPSHOT-unix.tar.gz'
 # and parses out
 # version: 3.2.0-SNAPSHOT
 # deb_version: 3.2.0.SNAPSHOT
@@ -18,19 +18,19 @@ parse_version() {
   fi
 }
 
-# Parse the version from a neo4j tarball like 'neo4j-community-3.2.0-SNAPSHOT-unix.tar.gz'
-# package_name: neo4j (if community)
-# package_name: neo4j-enterprise (if enterprise)
+# Parse the version from a neo5j tarball like 'neo5j-community-3.2.0-SNAPSHOT-unix.tar.gz'
+# package_name: neo5j (if community)
+# package_name: neo5j-enterprise (if enterprise)
 parse_pkgname() {
   # Figure if community or enterprise
   if [[ $(basename ${1}) =~ "enterprise" ]]; then
-    package_name="neo4j-enterprise"
+    package_name="neo5j-enterprise"
   else
-    package_name="neo4j"
+    package_name="neo5j"
   fi
 }
 
-# Parse the license from a neo4j tarball like 'neo4j-community-3.2.0-SNAPSHOT-unix.tar.gz'
+# Parse the license from a neo5j tarball like 'neo5j-community-3.2.0-SNAPSHOT-unix.tar.gz'
 # license: GPLv3 (if community)
 # license: AGPLv3 (if enterprise)
 parse_license() {

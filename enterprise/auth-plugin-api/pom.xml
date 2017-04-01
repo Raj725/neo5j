@@ -1,23 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
 
-  <artifactId>neo4j-auth-plugin-api</artifactId>
+  <artifactId>neo5j-auth-plugin-api</artifactId>
   <version>3.2.0-SNAPSHOT</version>
 
-  <name>Neo4j - Enterprise Graph Database Auth Plugin API</name>
-  <description>Enterprise auth plugin API for adding custom auth providers to the Neo4j database</description>
+  <name>Neo5j - Enterprise Graph Database Auth Plugin API</name>
+  <description>Enterprise auth plugin API for adding custom auth providers to the Neo5j database</description>
   <packaging>jar</packaging>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <licenses>

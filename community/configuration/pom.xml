@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
@@ -9,24 +9,24 @@
 
   <properties>
     <short-name>configuration</short-name>
-    <bundle.namespace>org.neo4j.security</bundle.namespace>
+    <bundle.namespace>org.neo5j.security</bundle.namespace>
     <license-text.header>GPL-3-header.txt</license-text.header>
     <licensing.prepend.text>notice-gpl-prefix.txt</licensing.prepend.text>
   </properties>
 
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>neo4j-configuration</artifactId>
+  <artifactId>neo5j-configuration</artifactId>
   <version>3.2.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
-  <name>Neo4j - Configuration</name>
-  <description>Code responsible for parsing the Neo4j configuration.</description>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <name>Neo5j - Configuration</name>
+  <description>Code responsible for parsing the Neo5j configuration.</description>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <licenses>
@@ -51,13 +51,13 @@ the relevant Commercial Agreement.
 
   <dependencies>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-graphdb-api</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-graphdb-api</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-logging</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-logging</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>neo4j-shell</artifactId>
+  <artifactId>neo5j-shell</artifactId>
   <version>3.2.0-SNAPSHOT</version>
 
-  <name>Neo4j - Generic shell</name>
+  <name>Neo5j - Generic shell</name>
   <description>
 		A generic command shell with a client and server part.
   </description>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <properties>
@@ -28,7 +28,7 @@
     <jline.artifactId>jline</jline.artifactId>
     <jline.version>2.12</jline.version>
     <jline.main.version>2.12</jline.main.version>
-    <bundle.namespace>org.neo4j.shell</bundle.namespace>
+    <bundle.namespace>org.neo5j.shell</bundle.namespace>
     <short-name>shell</short-name>
     <version-package>shell.impl</version-package>
     <license-text.header>GPL-3-header.txt</license-text.header>
@@ -64,13 +64,13 @@ the relevant Commercial Agreement.
         <configuration>
           <archive>
             <manifest>
-              <mainClass>org.neo4j.shell.StartClient</mainClass>
-              <packageName>org.neo4j.shell</packageName>
+              <mainClass>org.neo5j.shell.StartClient</mainClass>
+              <packageName>org.neo5j.shell</packageName>
             </manifest>
             <manifestEntries>
-              <Class-Path>neo4j-kernel-${project.version}.jar neo4j-index-${project.version}.jar lucene-core-${lucene.version}.jar jline-${jline.main.version}.jar
+              <Class-Path>neo5j-kernel-${project.version}.jar neo5j-index-${project.version}.jar lucene-core-${lucene.version}.jar jline-${jline.main.version}.jar
                 ${jline.artifactId}-${jline.version}.jar</Class-Path>
-              <Agent-Class>org.neo4j.shell.StartClient</Agent-Class>
+              <Agent-Class>org.neo5j.shell.StartClient</Agent-Class>
             </manifestEntries>
           </archive>
         </configuration>
@@ -80,47 +80,47 @@ the relevant Commercial Agreement.
 
   <dependencies>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
       <type>test-jar</type>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-common</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-common</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-io</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-io</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-jmx</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-jmx</artifactId>
       <version>${project.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-graph-algo</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-graph-algo</artifactId>
       <version>${project.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-cypher</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-cypher</artifactId>
       <version>${project.version}</version>
       <scope>provided</scope>
     </dependency>
@@ -162,14 +162,14 @@ the relevant Commercial Agreement.
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-bolt</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-bolt</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-logging</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-logging</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>

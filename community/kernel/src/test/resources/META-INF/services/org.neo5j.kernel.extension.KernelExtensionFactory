@@ -1,0 +1,4 @@
+org.neo5j.kernel.impl.api.index.inmemory.InMemoryIndexProviderFactory
+org.neo5j.kernel.impl.api.scan.InMemoryLabelScanStoreExtension
+org.neo5j.kernel.DummyExtensionFactory
+org.neo5j.kernel.impl.index.DummyIndexExtensionFactory

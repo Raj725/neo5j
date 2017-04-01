@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+include(src/main/distribution/shell-scripts/bin/neo5j-shared.m4)
+
+call_main_class "org.neo5j.tooling.ImportTool" "$@"

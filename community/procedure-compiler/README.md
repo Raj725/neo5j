@@ -1,4 +1,4 @@
-# Neo4j Tooling - Procedure|User Function Compiler
+# Neo5j Tooling - Procedure|User Function Compiler
 
 This is a annotation processor that will verify your stored procedures
 at compile time.
@@ -22,7 +22,7 @@ is not met:
  - `@Procedure` parameters must be annotated with `@Name`
  - all visited `@Procedure` names must be unique*
 
-*A deployed Neo4j instance can aggregate stored procedures from different JARs.
+*A deployed Neo5j instance can aggregate stored procedures from different JARs.
 Inter-JAR naming conflict cannot be detected by an annotation processor.
 By definition, it can only inspect one compilation unit at a time.
 

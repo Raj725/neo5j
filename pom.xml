@@ -3,25 +3,25 @@
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.neo4j.build</groupId>
+    <groupId>org.neo5j.build</groupId>
     <artifactId>parent-central</artifactId>
     <version>42</version>
     <relativePath/>
   </parent>
 
-  <groupId>org.neo4j</groupId>
+  <groupId>org.neo5j</groupId>
   <artifactId>parent</artifactId>
   <version>3.2.0-SNAPSHOT</version>
 
   <packaging>pom</packaging>
-  <name>Neo4j</name>
-  <description>Neo4j Graph Database</description>
+  <name>Neo5j</name>
+  <description>Neo5j Graph Database</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <neo4j.java.version>${maven.compiler.source}</neo4j.java.version>
+    <neo5j.java.version>${maven.compiler.source}</neo5j.java.version>
     <pico.version>2.14.3</pico.version>
     <licensing.prepend.text>notice-agpl-prefix.txt</licensing.prepend.text>
     <licensing.phase>compile</licensing.phase>
@@ -30,7 +30,7 @@
     <generate-config-docs-phase>prepare-package</generate-config-docs-phase>
     <hsqldb.version>2.3.2</hsqldb.version>
     <test.runner.jvm.settings.additional></test.runner.jvm.settings.additional>
-    <test.runner.jvm.settings>-Xmx2G -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=target/test-data -Dorg.neo4j.unsafe.impl.internal.dragons.UnsafeUtil.DIRTY_MEMORY=true -Dorg.neo4j.unsafe.impl.internal.dragons.UnsafeUtil.CHECK_NATIVE_ACCESS=true -Dorg.neo4j.io.pagecache.impl.muninn.usePreciseCursorErrorStackTraces=true -XX:+UnlockExperimentalVMOptions -XX:+TrustFinalNonStaticFields ${test.runner.jvm.settings.additional}</test.runner.jvm.settings>
+    <test.runner.jvm.settings>-Xmx2G -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=target/test-data -Dorg.neo5j.unsafe.impl.internal.dragons.UnsafeUtil.DIRTY_MEMORY=true -Dorg.neo5j.unsafe.impl.internal.dragons.UnsafeUtil.CHECK_NATIVE_ACCESS=true -Dorg.neo5j.io.pagecache.impl.muninn.usePreciseCursorErrorStackTraces=true -XX:+UnlockExperimentalVMOptions -XX:+TrustFinalNonStaticFields ${test.runner.jvm.settings.additional}</test.runner.jvm.settings>
     <doclint-groups>reference</doclint-groups>
     <jetty.version>9.2.9.v20150224</jetty.version>
     <findbugs.version>3.0.1</findbugs.version>
@@ -142,7 +142,7 @@
           <version>3.0.1</version>
         </plugin>
         <plugin>
-          <groupId>org.neo4j.build.plugins</groupId>
+          <groupId>org.neo5j.build.plugins</groupId>
           <artifactId>clirr-maven-plugin</artifactId>
           <version>1.0.1</version>
           <executions>
@@ -202,7 +202,7 @@
           <version>1.2.0.0</version>
         </plugin>
         <plugin>
-          <groupId>org.neo4j.build.plugins</groupId>
+          <groupId>org.neo5j.build.plugins</groupId>
           <artifactId>licensing-maven-plugin</artifactId>
           <version>1.7.5</version>
           <configuration>
@@ -211,9 +211,9 @@
             <plainTextReport>true</plainTextReport>
             <prependText>${licensing.prepend.text}</prependText>
             <excludedGroups>
-              ^((org.neo4j){1}|(org.neo4j.app){1}|(org.neo4j.server.plugin){1}|(org.neo4j.assembly){1}|(org.neo4j.bolt){1}|(org.neo4j.build){1}|(org.neo4j.test){1})$
+              ^((org.neo5j){1}|(org.neo5j.app){1}|(org.neo5j.server.plugin){1}|(org.neo5j.assembly){1}|(org.neo5j.bolt){1}|(org.neo5j.build){1}|(org.neo5j.test){1})$
             </excludedGroups>
-            <excludedArtifacts>^((neo4j-browser))$</excludedArtifacts>
+            <excludedArtifacts>^((neo5j-browser))$</excludedArtifacts>
             <includedScopes>compile</includedScopes>
           </configuration>
           <executions>
@@ -267,7 +267,7 @@
           </executions>
           <dependencies>
             <dependency>
-              <groupId>org.neo4j.build</groupId>
+              <groupId>org.neo5j.build</groupId>
               <artifactId>licensecheck-config</artifactId>
               <version>${project.version}</version>
             </dependency>
@@ -338,7 +338,7 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.neo4j.build.plugins</groupId>
+            <groupId>org.neo5j.build.plugins</groupId>
             <artifactId>license-maven-plugin</artifactId>
             <!-- inserting licenses is better than checking for them -->
             <executions>
@@ -385,7 +385,7 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.neo4j.build.plugins</groupId>
+            <groupId>org.neo5j.build.plugins</groupId>
             <artifactId>licensing-maven-plugin</artifactId>
           </plugin>
         </plugins>
@@ -449,8 +449,8 @@
       </dependency>
       <!-- testing -->
       <dependency>
-        <groupId>org.neo4j.driver</groupId>
-        <artifactId>neo4j-java-driver</artifactId>
+        <groupId>org.neo5j.driver</groupId>
+        <artifactId>neo5j-java-driver</artifactId>
         <version>1.1.0-M06</version>
         <scope>test</scope>
       </dependency>
@@ -695,7 +695,7 @@
         <version>${bouncycastle.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.neo4j.3rdparty.javax.ws.rs</groupId>
+        <groupId>org.neo5j.3rdparty.javax.ws.rs</groupId>
         <artifactId>jsr311-api</artifactId>
         <version>1.1.2.r612</version>
       </dependency>

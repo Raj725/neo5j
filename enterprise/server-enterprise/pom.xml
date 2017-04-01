@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.neo4j.app</groupId>
-  <artifactId>neo4j-server-enterprise</artifactId>
+  <groupId>org.neo5j.app</groupId>
+  <artifactId>neo5j-server-enterprise</artifactId>
   <version>3.2.0-SNAPSHOT</version>
 
-  <name>Neo4j - Enterprise Server</name>
-  <description>Standalone Neo4j server application.</description>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <name>Neo5j - Enterprise Server</name>
+  <description>Standalone Neo5j server application.</description>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <properties>
-    <bundle.namespace>org.neo4j.server.enterprise</bundle.namespace>
+    <bundle.namespace>org.neo5j.server.enterprise</bundle.namespace>
     <short-name>server-enterprise</short-name>
     <version-package>server.enterprise</version-package>
-    <neo4j-server.mainClass>org.neo4j.server.enterprise.EnterpriseEntryPoint</neo4j-server.mainClass>
+    <neo5j-server.mainClass>org.neo5j.server.enterprise.EnterpriseEntryPoint</neo5j-server.mainClass>
     <neo-server.home>target/generated-resources/appassembler/jsw</neo-server.home>
     <neo-server.confdir>target/test-classes/etc/neo-server</neo-server.confdir>
     <java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
@@ -33,9 +33,9 @@
   <packaging>jar</packaging>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <licenses>
@@ -60,23 +60,23 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.neo4j.app</groupId>
-      <artifactId>neo4j-server</artifactId>
+      <groupId>org.neo5j.app</groupId>
+      <artifactId>neo5j-server</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-enterprise-cypher</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-enterprise-cypher</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-enterprise</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-enterprise</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-security-enterprise</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-security-enterprise</artifactId>
       <version>${project.version}</version>
     </dependency>
 
@@ -117,75 +117,75 @@
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-common</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-common</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-security-enterprise</artifactId>
-      <version>${project.version}</version>
-      <type>test-jar</type>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-io</artifactId>
-      <version>${project.version}</version>
-      <type>test-jar</type>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-ha</artifactId>
-      <version>${project.version}</version>
-      <type>test-jar</type>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-metrics</artifactId>
-      <version>${project.version}</version>
-      <type>test-jar</type>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-bolt</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-security-enterprise</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-security</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-io</artifactId>
+      <version>${project.version}</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-ha</artifactId>
+      <version>${project.version}</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-metrics</artifactId>
+      <version>${project.version}</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-bolt</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-logging</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-security</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j.app</groupId>
-      <artifactId>neo4j-server</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-logging</artifactId>
+      <version>${project.version}</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.neo5j.app</groupId>
+      <artifactId>neo5j-server</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
@@ -203,8 +203,8 @@
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-shell</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-shell</artifactId>
       <version>${project.version}</version>
       <scope>runtime</scope>
     </dependency>
@@ -244,11 +244,11 @@
           </execution>
         </executions>
         <configuration>
-          <mainClass>${neo4j-server.mainClass}</mainClass>
+          <mainClass>${neo5j-server.mainClass}</mainClass>
           <classpathScope>test</classpathScope>
           <arguments>
-            <argument>--config-dir=${basedir}/neo4j-home/conf</argument>
-            <argument>--home-dir=${basedir}/neo4j-home</argument>
+            <argument>--config-dir=${basedir}/neo5j-home/conf</argument>
+            <argument>--home-dir=${basedir}/neo5j-home</argument>
           </arguments>
         </configuration>
       </plugin>
@@ -264,7 +264,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>${neo4j-server.mainClass}</mainClass>
+                  <mainClass>${neo5j-server.mainClass}</mainClass>
                 </manifest>
               </archive>
               <excludes>
@@ -293,9 +293,9 @@
       <id>initial-build</id>
       <repositories>
         <repository>
-          <id>neo4j-dev</id>
-          <name>Neo4j Developer Repository</name>
-          <url>http://m2.neo4j.org/content/groups/everything/</url>
+          <id>neo5j-dev</id>
+          <name>Neo5j Developer Repository</name>
+          <url>http://m2.neo5j.org/content/groups/everything/</url>
         </repository>
       </repositories>
     </profile>
@@ -303,9 +303,9 @@
 
   <repositories>
     <repository>
-      <id>neo4j-release-repository</id>
-      <name>Neo4j Maven 2 release repository</name>
-      <url>http://m2.neo4j.org/content/repositories/releases</url>
+      <id>neo5j-release-repository</id>
+      <name>Neo5j Maven 2 release repository</name>
+      <url>http://m2.neo5j.org/content/repositories/releases</url>
       <releases>
         <enabled>true</enabled>
       </releases>
@@ -314,9 +314,9 @@
       </snapshots>
     </repository>
     <repository>
-      <id>neo4j-snapshot-repository</id>
-      <name>Neo4j Maven 2 snapshot repository</name>
-      <url>http://m2.neo4j.org/content/repositories/snapshots</url>
+      <id>neo5j-snapshot-repository</id>
+      <name>Neo5j Maven 2 snapshot repository</name>
+      <url>http://m2.neo5j.org/content/repositories/snapshots</url>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>

@@ -1,5 +1,5 @@
 #!/bin/sh
-# postinst script for neo4j
+# postinst script for neo5j
 # Based on jenkins install script
 # see: dh_installdeb(1)
 
@@ -19,57 +19,57 @@ set -e
 
 case "$1" in
     configure)
-        [ -r /etc/default/neo4j ] && . /etc/default/neo4j
-        : ${NEO_USER:=neo4j}
+        [ -r /etc/default/neo5j ] && . /etc/default/neo5j
+        : ${NEO_USER:=neo5j}
 
-        # Create neo4j user if it doesn't exist.
-        if ! id neo4j > /dev/null 2>&1 ; then
-            useradd --system --user-group --home /var/lib/neo4j --shell /bin/bash neo4j
+        # Create neo5j user if it doesn't exist.
+        if ! id neo5j > /dev/null 2>&1 ; then
+            useradd --system --user-group --home /var/lib/neo5j --shell /bin/bash neo5j
         else
-            # Make sure a neo4j group exists in case user is upgrading
+            # Make sure a neo5j group exists in case user is upgrading
             # from older version where no such group was created
-            groupadd --system --force neo4j
-            # Make sure neo4j user's primary group is neo4j
-            usermod --gid neo4j neo4j > /dev/null 2>&1
+            groupadd --system --force neo5j
+            # Make sure neo5j user's primary group is neo5j
+            usermod --gid neo5j neo5j > /dev/null 2>&1
         fi
 
-        # directories needed for neo4j
-        chown -R $NEO_USER:adm /var/lib/neo4j /var/log/neo4j /etc/neo4j /usr/share/neo4j /var/run/neo4j
-        chmod u+rwx /var/lib/neo4j /var/log/neo4j /etc/neo4j /usr/share/neo4j /var/run/neo4j
+        # directories needed for neo5j
+        chown -R $NEO_USER:adm /var/lib/neo5j /var/log/neo5j /etc/neo5j /usr/share/neo5j /var/run/neo5j
+        chmod u+rwx /var/lib/neo5j /var/log/neo5j /etc/neo5j /usr/share/neo5j /var/run/neo5j
 
-        update-rc.d neo4j defaults
+        update-rc.d neo5j defaults
 
-        if [ -f /tmp/neo4j-upgraded-from-2.x ]; then
+        if [ -f /tmp/neo5j-upgraded-from-2.x ]; then
             # remove the old conffiles
-            dpkg-maintscript-helper rm_conffile "/etc/init.d/neo4j-service" -- "$@"
-            dpkg-maintscript-helper rm_conffile "/etc/neo4j/README.txt" -- "$@"
-            dpkg-maintscript-helper rm_conffile "/etc/neo4j/neo4j-http-logging.xml" -- "$@"
-            dpkg-maintscript-helper rm_conffile "/etc/neo4j/neo4j-server.properties" -- "$@"
-            dpkg-maintscript-helper rm_conffile "/etc/neo4j/neo4j.properties" -- "$@"
+            dpkg-maintscript-helper rm_conffile "/etc/init.d/neo5j-service" -- "$@"
+            dpkg-maintscript-helper rm_conffile "/etc/neo5j/README.txt" -- "$@"
+            dpkg-maintscript-helper rm_conffile "/etc/neo5j/neo5j-http-logging.xml" -- "$@"
+            dpkg-maintscript-helper rm_conffile "/etc/neo5j/neo5j-server.properties" -- "$@"
+            dpkg-maintscript-helper rm_conffile "/etc/neo5j/neo5j.properties" -- "$@"
 
             # conf directory symlink, needed because config-migrator depends on config living in conf subdir
-            ln -s /etc/neo4j /var/lib/neo4j/conf
+            ln -s /etc/neo5j /var/lib/neo5j/conf
 
             echo "-----------------------------------------------------------------------------"
-            echo "It looks like you are upgrading from Neo4j 2.x. Many configuration"
+            echo "It looks like you are upgrading from Neo5j 2.x. Many configuration"
             echo "changes and improvements have been made in 3.0, including the location of"
             echo "the databases. These changes cannot be handled automatically by this package"
             echo "installation."
             echo
             echo "You MUST read the upgrade guide before re-starting the database.  The upgrade"
-            echo "guide can be found at https://neo4j.com/guides/upgrade/."
+            echo "guide can be found at https://neo5j.com/guides/upgrade/."
             echo
-            database_count=$(find /var/lib/neo4j/data -type f |grep neostore$ | sed s,/neostore$,, | wc -l)
+            database_count=$(find /var/lib/neo5j/data -type f |grep neostore$ | sed s,/neostore$,, | wc -l)
             if [ "$database_count" -gt "0" ]; then
                 echo "The following databases have been found:"
                 echo
-                find /var/lib/neo4j/data -type f |grep neostore$ | sed s,/neostore$,,
+                find /var/lib/neo5j/data -type f |grep neostore$ | sed s,/neostore$,,
                 echo
                 echo "You should import these databases. You can try using the following commands:"
                 echo
-                for db in $(find /var/lib/neo4j/data -type f |grep neostore$ | sed s,/neostore$,,); do
+                for db in $(find /var/lib/neo5j/data -type f |grep neostore$ | sed s,/neostore$,,); do
                     dbname=$(basename ${db})
-                    echo "    sudo -u neo4j -g adm neo4j-admin import --mode=database --database=${dbname} --from=${db}"
+                    echo "    sudo -u neo5j -g adm neo5j-admin import --mode=database --database=${dbname} --from=${db}"
                 done
                 echo
                 echo "After you have completed the upgrade process, these can be safely deleted."
@@ -79,37 +79,37 @@ case "$1" in
             echo "You will have to copy your changed configuration files to the original location so the"
             echo "2.x-config-migrator can find them first."
             echo
-            for old_config_file in /etc/neo4j/neo4j.properties.dpkg-bak \
-                                   /etc/neo4j/neo4j-server.properties.dpkg-bak \
-                                   /etc/neo4j/neo4j-wrapper.conf.dpkg-bak; do
+            for old_config_file in /etc/neo5j/neo5j.properties.dpkg-bak \
+                                   /etc/neo5j/neo5j-server.properties.dpkg-bak \
+                                   /etc/neo5j/neo5j-wrapper.conf.dpkg-bak; do
                 if [ -f ${old_config_file} ]; then
-                    echo "    sudo cp ${old_config_file} /etc/neo4j/$(basename ${old_config_file} .dpkg-bak)"
+                    echo "    sudo cp ${old_config_file} /etc/neo5j/$(basename ${old_config_file} .dpkg-bak)"
                 fi
             done
             echo
             echo "And then reun the 2.x-config-migrator like so:"
             echo
-            echo "    sudo -u neo4j -g adm java -jar /usr/share/neo4j/bin/tools/2.x-config-migrator.jar /var/lib/neo4j /var/lib/neo4j"
+            echo "    sudo -u neo5j -g adm java -jar /usr/share/neo5j/bin/tools/2.x-config-migrator.jar /var/lib/neo5j /var/lib/neo5j"
             echo
             echo "You must tell the database to migrate your active database when the service starts."
             echo "To do this, use the following command:"
             echo
-            echo "    sudo -u neo4j -g adm sed -i 's/#dbms.allow_format_migration=true/dbms.allow_format_migration=true/' /etc/neo4j/neo4j.conf"
+            echo "    sudo -u neo5j -g adm sed -i 's/#dbms.allow_format_migration=true/dbms.allow_format_migration=true/' /etc/neo5j/neo5j.conf"
             echo
             echo "Finally, start the database service:"
             echo
-            echo "    sudo service neo4j start"
+            echo "    sudo service neo5j start"
             echo "-----------------------------------------------------------------------------"
-            rm /tmp/neo4j-upgraded-from-2.x
+            rm /tmp/neo5j-upgraded-from-2.x
         else
-            if [ -f /etc/neo4j/neo4j-wrapper.conf ]; then
-                echo >> /etc/neo4j/neo4j.conf
-                cat /etc/neo4j/neo4j-wrapper.conf >> /etc/neo4j/neo4j.conf
-                rm /etc/neo4j/neo4j-wrapper.conf
+            if [ -f /etc/neo5j/neo5j-wrapper.conf ]; then
+                echo >> /etc/neo5j/neo5j.conf
+                cat /etc/neo5j/neo5j-wrapper.conf >> /etc/neo5j/neo5j.conf
+                rm /etc/neo5j/neo5j-wrapper.conf
             fi
 
-            # Start neo4j
-            invoke-rc.d neo4j start
+            # Start neo5j
+            invoke-rc.d neo5j start
         fi
     ;;
 

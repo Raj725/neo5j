@@ -1,24 +1,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
-  <groupId>org.neo4j</groupId>
-  <artifactId>neo4j-consistency-check</artifactId>
+  <groupId>org.neo5j</groupId>
+  <artifactId>neo5j-consistency-check</artifactId>
   <version>3.2.0-SNAPSHOT</version>
 
-  <name>Neo4j - Consistency Checker</name>
-  <description>Tool for checking consistency of a Neo4j data store.</description>
+  <name>Neo5j - Consistency Checker</name>
+  <description>Tool for checking consistency of a Neo5j data store.</description>
   <packaging>jar</packaging>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <properties>
     <version-package>consistency.checking.impl</version-package>
-    <neo4j.version>${project.version}</neo4j.version>
-    <bundle.namespace>org.neo4j.consistency</bundle.namespace>
+    <neo5j.version>${project.version}</neo5j.version>
+    <bundle.namespace>org.neo5j.consistency</bundle.namespace>
     <short-name>consistency-check</short-name>
     <docs-plugin.skip>false</docs-plugin.skip>
     <license-text.header>GPL-3-header.txt</license-text.header>
@@ -26,9 +26,9 @@
   </properties>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <licenses>
@@ -54,13 +54,13 @@ the relevant Commercial Agreement.
   <dependencies>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-lucene-index</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-lucene-index</artifactId>
       <version>${project.version}</version>
     </dependency>
 
@@ -95,46 +95,46 @@ the relevant Commercial Agreement.
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-common</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-common</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-io</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-io</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-logging</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-logging</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-command-line</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-command-line</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-dbms</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-dbms</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-io</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-io</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>

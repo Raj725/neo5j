@@ -1,0 +1,2 @@
+org.neo5j.commandline.admin.security.SetInitialPasswordCommandProvider
+org.neo5j.commandline.admin.security.SetDefaultAdminCommandProvider

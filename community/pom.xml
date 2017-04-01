@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>..</relativePath>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.neo4j.build</groupId>
+  <groupId>org.neo5j.build</groupId>
   <artifactId>community-build</artifactId>
   <version>3.2.0-SNAPSHOT</version>
 
-  <name>Neo4j - Community Build</name>
+  <name>Neo5j - Community Build</name>
   <packaging>pom</packaging>
-  <description>Project that builds the Neo4j Community distribution.</description>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <description>Project that builds the Neo5j Community distribution.</description>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <properties>
     <short-name>community-build</short-name>
@@ -25,9 +25,9 @@
   </properties>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <modules>
@@ -42,7 +42,7 @@
     <module>csv</module>
     <module>logging</module>
     <module>security</module>
-    <module>neo4j-slf4j</module>
+    <module>neo5j-slf4j</module>
     <module>codegen</module>
     <module>index</module>
     <module>kernel</module>
@@ -52,8 +52,8 @@
     <module>lucene-index</module>
     <module>lucene-index-upgrade</module>
     <module>graph-algo</module>
-    <module>neo4j</module>
-    <module>neo4j-community</module>
+    <module>neo5j</module>
+    <module>neo5j-community</module>
     <module>shell</module>
     <module>import-tool</module>
     <module>server-api</module>
@@ -61,7 +61,7 @@
     <module>server</module>
     <module>server-plugin-test</module>
     <module>consistency-check</module>
-    <module>neo4j-harness</module>
+    <module>neo5j-harness</module>
     <module>licensecheck-config</module>
     <module>dbms</module>
     <module>command-line</module>
@@ -111,7 +111,7 @@ the relevant Commercial Agreement.
       <build>
         <plugins>
           <plugin>
-          <groupId>org.neo4j.build.plugins</groupId>
+          <groupId>org.neo5j.build.plugins</groupId>
           <artifactId>ease-maven-plugin</artifactId>
             <executions>
               <execution>
@@ -121,17 +121,17 @@ the relevant Commercial Agreement.
                 </goals>
                 <configuration>
                   <includes>
-                    <include>org.neo4j:*</include>
-                    <include>org.neo4j.app:*</include>
-                    <include>org.neo4j.test:*</include>
-                    <include>org.neo4j.build:licensecheck-config:*</include>
+                    <include>org.neo5j:*</include>
+                    <include>org.neo5j.app:*</include>
+                    <include>org.neo5j.test:*</include>
+                    <include>org.neo5j.build:licensecheck-config:*</include>
                   </includes>
                   <excludes>
-                    <exclude>org.neo4j:neo4j-graph-matching</exclude>
-                    <exclude>org.neo4j:neo4j-cypher-frontend-3.1</exclude>
-                    <exclude>org.neo4j:neo4j-cypher-frontend-2.3</exclude>
-                    <exclude>org.neo4j:neo4j-cypher-compiler-3.1</exclude>
-                    <exclude>org.neo4j:neo4j-cypher-compiler-2.3</exclude>
+                    <exclude>org.neo5j:neo5j-graph-matching</exclude>
+                    <exclude>org.neo5j:neo5j-cypher-frontend-3.1</exclude>
+                    <exclude>org.neo5j:neo5j-cypher-frontend-2.3</exclude>
+                    <exclude>org.neo5j:neo5j-cypher-compiler-3.1</exclude>
+                    <exclude>org.neo5j:neo5j-cypher-compiler-2.3</exclude>
                   </excludes>
                 </configuration>
               </execution>
@@ -145,59 +145,59 @@ the relevant Commercial Agreement.
       </build>
       <dependencies>
         <dependency>
-          <groupId>org.neo4j</groupId>
-          <artifactId>neo4j</artifactId>
+          <groupId>org.neo5j</groupId>
+          <artifactId>neo5j</artifactId>
           <version>${project.version}</version>
         </dependency>
         <dependency>
-          <groupId>org.neo4j</groupId>
-          <artifactId>neo4j-community</artifactId>
+          <groupId>org.neo5j</groupId>
+          <artifactId>neo5j-community</artifactId>
           <version>${project.version}</version>
           <type>pom</type>
         </dependency>
         <dependency>
-          <groupId>org.neo4j</groupId>
-          <artifactId>neo4j-shell</artifactId>
+          <groupId>org.neo5j</groupId>
+          <artifactId>neo5j-shell</artifactId>
           <version>${project.version}</version>
         </dependency>
         <dependency>
-          <groupId>org.neo4j</groupId>
-          <artifactId>neo4j-import-tool</artifactId>
+          <groupId>org.neo5j</groupId>
+          <artifactId>neo5j-import-tool</artifactId>
           <version>${project.version}</version>
         </dependency>
         <dependency>
-          <groupId>org.neo4j</groupId>
-          <artifactId>neo4j-security</artifactId>
+          <groupId>org.neo5j</groupId>
+          <artifactId>neo5j-security</artifactId>
           <version>${project.version}</version>
         </dependency>
         <dependency>
-          <groupId>org.neo4j.app</groupId>
-          <artifactId>neo4j-server</artifactId>
+          <groupId>org.neo5j.app</groupId>
+          <artifactId>neo5j-server</artifactId>
           <version>${project.version}</version>
         </dependency>
         <dependency>
-          <groupId>org.neo4j.build</groupId>
+          <groupId>org.neo5j.build</groupId>
           <artifactId>licensecheck-config</artifactId>
           <version>${project.version}</version>
         </dependency>
         <dependency>
-          <groupId>org.neo4j</groupId>
+          <groupId>org.neo5j</groupId>
           <artifactId>cypher-parent</artifactId>
           <version>${project.version}</version>
           <type>pom</type>
         </dependency>
         <dependency>
-          <groupId>org.neo4j.test</groupId>
-          <artifactId>neo4j-harness</artifactId>
+          <groupId>org.neo5j.test</groupId>
+          <artifactId>neo5j-harness</artifactId>
           <version>${project.version}</version>
         </dependency>
         <dependency>
-          <groupId>org.neo4j</groupId>
-          <artifactId>neo4j-slf4j</artifactId>
+          <groupId>org.neo5j</groupId>
+          <artifactId>neo5j-slf4j</artifactId>
           <version>${project.version}</version>
         </dependency>
         <dependency>
-          <groupId>org.neo4j</groupId>
+          <groupId>org.neo5j</groupId>
           <artifactId>procedure-compiler</artifactId>
           <version>${project.version}</version>
         </dependency>

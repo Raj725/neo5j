@@ -5,15 +5,15 @@ test_description="Test differences running the arbiter"
 . ./lib/sharness.sh
 fake_install
 
-set_config 'dbms.mode' 'ARBITER' neo4j.conf
-touch "$(neo4j_home)/lib/neo4j-server-enterprise-0.0.0.jar"
+set_config 'dbms.mode' 'ARBITER' neo5j.conf
+touch "$(neo5j_home)/lib/neo5j-server-enterprise-0.0.0.jar"
 
 test_expect_success "should start successfully" "
-  run_console >neo4j.stdout
+  run_console >neo5j.stdout
 "
 
 test_expect_success "should invoke arbiter main class" "
-  test_expect_java_arg 'org.neo4j.server.enterprise.ArbiterEntryPoint'
+  test_expect_java_arg 'org.neo5j.server.enterprise.ArbiterEntryPoint'
 "
 
 test_expect_success "should print a specific startup message" "

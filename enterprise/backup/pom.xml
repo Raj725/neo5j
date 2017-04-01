@@ -1,30 +1,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
-  <groupId>org.neo4j</groupId>
-  <artifactId>neo4j-backup</artifactId>
+  <groupId>org.neo5j</groupId>
+  <artifactId>neo5j-backup</artifactId>
   <version>3.2.0-SNAPSHOT</version>
 
-  <name>Neo4j - Backup Tool</name>
-  <description>Command line tool for grabbing backups from a running Neo4j instance</description>
+  <name>Neo5j - Backup Tool</name>
+  <description>Command line tool for grabbing backups from a running Neo5j instance</description>
   <packaging>jar</packaging>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <properties>
-    <bundle.namespace>org.neo4j.backup</bundle.namespace>
+    <bundle.namespace>org.neo5j.backup</bundle.namespace>
     <short-name>backup</short-name>
     <version-package>backup.impl</version-package>
   </properties>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <licenses>
@@ -50,21 +50,21 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.neo4j.build.plugins</groupId>
+        <groupId>org.neo5j.build.plugins</groupId>
         <artifactId>clirr-maven-plugin</artifactId>
         <configuration>
           <includes>
-            <include>org/neo4j/backup/OnlineBackupExtensionFactory.Dependencies</include>
-            <include>org/neo4j/backup/OnlineBackupKernelExtension.BackupProvider</include>
-            <include>org/neo4j/backup/TheBackupInterface</include>
-            <include>org/neo4j/backup/BackupExtensionService</include>
-            <include>org/neo4j/backup/BackupTool</include>
-            <include>org/neo4j/backup/OnlineBackup</include>
-            <include>org/neo4j/backup/OnlineBackupExtensionFactory</include>
-            <!--<include>org/neo4j/backup/OnlineBackupKernelExtension</include> broken atm -->
-            <include>org/neo4j/backup/OnlineBackupSettings</include>
-            <include>org/neo4j/backup/StoreCopyResponsePacker</include>
-            <include>org/neo4j/backup/IncrementalBackupNotPossibleException</include>
+            <include>org/neo5j/backup/OnlineBackupExtensionFactory.Dependencies</include>
+            <include>org/neo5j/backup/OnlineBackupKernelExtension.BackupProvider</include>
+            <include>org/neo5j/backup/TheBackupInterface</include>
+            <include>org/neo5j/backup/BackupExtensionService</include>
+            <include>org/neo5j/backup/BackupTool</include>
+            <include>org/neo5j/backup/OnlineBackup</include>
+            <include>org/neo5j/backup/OnlineBackupExtensionFactory</include>
+            <!--<include>org/neo5j/backup/OnlineBackupKernelExtension</include> broken atm -->
+            <include>org/neo5j/backup/OnlineBackupSettings</include>
+            <include>org/neo5j/backup/StoreCopyResponsePacker</include>
+            <include>org/neo5j/backup/IncrementalBackupNotPossibleException</include>
           </includes>
         </configuration>
       </plugin>
@@ -77,30 +77,30 @@
       <artifactId>annotations</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-com</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-com</artifactId>
       <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-command-line</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-command-line</artifactId>
       <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-dbms</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-dbms</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-cluster</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-cluster</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-consistency-check</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-consistency-check</artifactId>
       <version>${project.version}</version>
     </dependency>
 
@@ -135,35 +135,35 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-lucene-index</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-lucene-index</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
-      <version>${project.version}</version>
-      <type>test-jar</type>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-io</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-common</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-io</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-common</artifactId>
+      <version>${project.version}</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>

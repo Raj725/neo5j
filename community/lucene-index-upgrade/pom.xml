@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-        <groupId>org.neo4j</groupId>
+        <groupId>org.neo5j</groupId>
         <artifactId>parent</artifactId>
         <version>3.2.0-SNAPSHOT</version>
         <relativePath>../..</relativePath>
@@ -17,12 +17,12 @@
     </properties>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>neo4j-lucene-upgrade</artifactId>
+    <artifactId>neo5j-lucene-upgrade</artifactId>
     <version>3.2.0-SNAPSHOT</version>
 
     <packaging>jar</packaging>
-    <name>Neo4j - Lucene Index Upgrade</name>
-    <description>Neo4j Lucene Index Upgrade for legacy index migrations</description>
+    <name>Neo5j - Lucene Index Upgrade</name>
+    <description>Neo5j Lucene Index Upgrade for legacy index migrations</description>
 
     <build>
         <plugins>

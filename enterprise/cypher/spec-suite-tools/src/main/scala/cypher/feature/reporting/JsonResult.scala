@@ -2,9 +2,9 @@
  * Copyright (c) 2002-2017 "Neo Technology,"
  * Network Engine for Objects in Lund AB [http://neotechnology.com]
  *
- * This file is part of Neo4j.
+ * This file is part of Neo5j.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo5j is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
@@ -21,7 +21,7 @@ package cypher.feature.reporting
 
 
 import com.novus.salat.annotations.{Ignore, Key, Persist}
-import org.neo4j.cypher.internal.compiler.v3_2.ast.QueryTag
+import org.neo5j.cypher.internal.compiler.v3_2.ast.QueryTag
 
 import scala.annotation.meta.getter
 

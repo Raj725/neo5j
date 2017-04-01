@@ -2,9 +2,9 @@
  * Copyright (c) 2002-2017 "Neo Technology,"
  * Network Engine for Objects in Lund AB [http://neotechnology.com]
  *
- * This file is part of Neo4j.
+ * This file is part of Neo5j.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo5j is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
@@ -24,8 +24,8 @@ import java.net.URI
 
 import cypher.cucumber.CucumberAdapter
 import gherkin.formatter.model.{Match, Result}
-import org.neo4j.graphdb.config.Setting
-import org.neo4j.graphdb.factory.GraphDatabaseSettings
+import org.neo5j.graphdb.config.Setting
+import org.neo5j.graphdb.factory.GraphDatabaseSettings
 
 import scala.reflect.io.File
 

@@ -2,22 +2,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
 
-  <groupId>org.neo4j</groupId>
-  <artifactId>neo4j-management</artifactId>
+  <groupId>org.neo5j</groupId>
+  <artifactId>neo5j-management</artifactId>
   <version>3.2.0-SNAPSHOT</version>
 
-  <name>Neo4j - Graph DB Monitoring and Management tools</name>
+  <name>Neo5j - Graph DB Monitoring and Management tools</name>
   <description>Management support using JMX.</description>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <properties>
-    <bundle.namespace>org.neo4j.management</bundle.namespace>
+    <bundle.namespace>org.neo5j.management</bundle.namespace>
     <short-name>management</short-name>
     <version-package>management.impl</version-package>
   </properties>
@@ -25,9 +25,9 @@
   <packaging>jar</packaging>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <licenses>
@@ -64,11 +64,11 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.neo4j.build.plugins</groupId>
+        <groupId>org.neo5j.build.plugins</groupId>
         <artifactId>clirr-maven-plugin</artifactId>
         <configuration>
           <includes>
-            <include>org/neo4j/management/*</include>
+            <include>org/neo5j/management/*</include>
           </includes>
         </configuration>
       </plugin>
@@ -77,8 +77,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-jmx</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-jmx</artifactId>
       <version>${project.version}</version>
       <scope>provided</scope>
       <!-- because it is not available when used from JConsole -->
@@ -89,30 +89,30 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
       <scope>provided</scope>
       <!-- because the jmx dependency is provided transitive dependencies doesn't come through -->
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-common</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-common</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-io</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-io</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>

@@ -2,9 +2,9 @@
  * Copyright (c) 2002-2017 "Neo Technology,"
  * Network Engine for Objects in Lund AB [http://neotechnology.com]
  *
- * This file is part of Neo4j.
+ * This file is part of Neo5j.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo5j is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -21,14 +21,14 @@ package examples;
 
 import org.junit.Test;
 
-import org.neo4j.graphdb.GraphDatabaseService;
-import org.neo4j.graphdb.Node;
-import org.neo4j.graphdb.Relationship;
-import org.neo4j.graphdb.RelationshipType;
-import org.neo4j.graphdb.Transaction;
-import org.neo4j.graphdb.index.IndexHits;
-import org.neo4j.graphdb.index.RelationshipIndex;
-import org.neo4j.test.TestGraphDatabaseFactory;
+import org.neo5j.graphdb.GraphDatabaseService;
+import org.neo5j.graphdb.Node;
+import org.neo5j.graphdb.Relationship;
+import org.neo5j.graphdb.RelationshipType;
+import org.neo5j.graphdb.Transaction;
+import org.neo5j.graphdb.index.IndexHits;
+import org.neo5j.graphdb.index.RelationshipIndex;
+import org.neo5j.test.TestGraphDatabaseFactory;
 
 import static org.junit.Assert.assertEquals;
 

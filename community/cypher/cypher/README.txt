@@ -1,4 +1,4 @@
-Cypher is an execution engine that allows querying Neo4j in a nice way.
+Cypher is an execution engine that allows querying Neo5j in a nice way.
 
 
 Working with the source code in Eclipse IDE

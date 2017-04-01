@@ -1,11 +1,11 @@
-Neo4j
+Neo5j
 Copyright © 2002-2016 Network Engine for Objects in Lund AB (referred to
 in this notice as “Neo Technology”)
    [http://neotechnology.com]
 
 This product includes software ("Software") developed by Neo Technology.
 
-The copyright in the bundled Neo4j graph database (including the
+The copyright in the bundled Neo5j graph database (including the
 Software) is owned by Neo Technology. The Software developed and owned
 by Neo Technology is licensed under the GNU AFFERO GENERAL PUBLIC
 LICENSE Version 3 (http://www.fsf.org/licensing/licenses/agpl-3.0.html)

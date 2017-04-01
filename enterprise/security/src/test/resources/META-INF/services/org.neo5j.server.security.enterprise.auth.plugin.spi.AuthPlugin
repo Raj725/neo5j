@@ -1,0 +1,4 @@
+org.neo5j.server.security.enterprise.auth.plugin.TestAuthPlugin
+org.neo5j.server.security.enterprise.auth.plugin.TestCacheableAuthPlugin
+org.neo5j.server.security.enterprise.auth.plugin.TestCacheableAdminAuthPlugin
+org.neo5j.server.security.enterprise.auth.plugin.LdapGroupHasUsersAuthPlugin

@@ -1,7 +1,7 @@
-#{product.fullname} #{neo4j.version}
+#{product.fullname} #{neo5j.version}
 =======================================
 
-Welcome to #{product.fullname} release #{neo4j.version}, a high-performance graph database.
+Welcome to #{product.fullname} release #{neo5j.version}, a high-performance graph database.
 This is the community distribution of #{product.fullname}, including everything you need to
 start building applications that can model, persist and explore graph-like data.
 
@@ -31,8 +31,8 @@ look at the web interface ...
 
 1. Open a console and navigate to the install directory.
 2. Start the server:
-   * Windows, use: bin\Neo4j.bat
-   * Linux/Mac, use: ./bin/neo4j console
+   * Windows, use: bin\Neo5j.bat
+   * Linux/Mac, use: ./bin/neo5j console
 3. In a browser, open http://localhost:#{default.http.port}/
 4. From any REST client or browser, open http://localhost:#{default.http.port}/db/data
    in order to get a REST starting point, e.g.
@@ -42,9 +42,9 @@ look at the web interface ...
 Learn more
 ----------
 
-* #{neo4j-home.url.title}: #{neo4j-home.url}
+* #{neo5j-home.url.title}: #{neo5j-home.url}
 * #{getting-started.url.title}: #{getting-started.url}
-* #{neo4j-manual.title}: #{neo4j-manual.url}
+* #{neo5j-manual.title}: #{neo5j-manual.url}
 
 License(s)
 ----------

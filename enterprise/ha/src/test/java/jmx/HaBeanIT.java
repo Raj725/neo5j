@@ -2,9 +2,9 @@
  * Copyright (c) 2002-2017 "Neo Technology,"
  * Network Engine for Objects in Lund AB [http://neotechnology.com]
  *
- * This file is part of Neo4j.
+ * This file is part of Neo5j.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo5j is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
@@ -24,30 +24,30 @@ import org.junit.Test;
 
 import java.net.URI;
 import java.util.Arrays;
-import org.neo4j.graphdb.factory.GraphDatabaseSettings;
-import org.neo4j.helpers.collection.Iterables;
-import org.neo4j.jmx.Kernel;
-import org.neo4j.jmx.impl.JmxKernelExtension;
-import org.neo4j.kernel.ha.HaSettings;
-import org.neo4j.kernel.ha.HighlyAvailableGraphDatabase;
-import org.neo4j.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher;
-import org.neo4j.kernel.impl.ha.ClusterManager.ManagedCluster;
-import org.neo4j.management.BranchedStore;
-import org.neo4j.management.ClusterMemberInfo;
-import org.neo4j.management.HighAvailability;
-import org.neo4j.management.Neo4jManager;
-import org.neo4j.test.ha.ClusterRule;
+import org.neo5j.graphdb.factory.GraphDatabaseSettings;
+import org.neo5j.helpers.collection.Iterables;
+import org.neo5j.jmx.Kernel;
+import org.neo5j.jmx.impl.JmxKernelExtension;
+import org.neo5j.kernel.ha.HaSettings;
+import org.neo5j.kernel.ha.HighlyAvailableGraphDatabase;
+import org.neo5j.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher;
+import org.neo5j.kernel.impl.ha.ClusterManager.ManagedCluster;
+import org.neo5j.management.BranchedStore;
+import org.neo5j.management.ClusterMemberInfo;
+import org.neo5j.management.HighAvailability;
+import org.neo5j.management.Neo5jManager;
+import org.neo5j.test.ha.ClusterRule;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import static org.neo4j.helpers.collection.Iterables.filter;
-import static org.neo4j.helpers.collection.Iterables.firstOrNull;
-import static org.neo4j.kernel.configuration.Settings.STRING;
-import static org.neo4j.kernel.configuration.Settings.setting;
-import static org.neo4j.test.ha.ClusterRule.intBase;
-import static org.neo4j.test.ha.ClusterRule.stringWithIntBase;
+import static org.neo5j.helpers.collection.Iterables.filter;
+import static org.neo5j.helpers.collection.Iterables.firstOrNull;
+import static org.neo5j.kernel.configuration.Settings.STRING;
+import static org.neo5j.kernel.configuration.Settings.setting;
+import static org.neo5j.test.ha.ClusterRule.intBase;
+import static org.neo5j.test.ha.ClusterRule.stringWithIntBase;
 
 public class HaBeanIT
 {
@@ -84,9 +84,9 @@ public class HaBeanIT
         assertEquals( "should be master", HighAvailabilityModeSwitcher.MASTER, ha.getRole() );
     }
 
-    private Neo4jManager beans( HighlyAvailableGraphDatabase db )
+    private Neo5jManager beans( HighlyAvailableGraphDatabase db )
     {
-        return new Neo4jManager( db.getDependencyResolver().resolveDependency( JmxKernelExtension
+        return new Neo5jManager( db.getDependencyResolver().resolveDependency( JmxKernelExtension
                 .class ).getSingleManagementBean( Kernel.class ) );
     }
 

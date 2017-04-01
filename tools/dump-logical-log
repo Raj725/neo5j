@@ -2,4 +2,4 @@
 
 mvn dependency:copy-dependencies
 
-java -cp "target/dependency/*:target/classes"  org.neo4j.tools.dump.DumpLogicalLog $*
+java -cp "target/dependency/*:target/classes"  org.neo5j.tools.dump.DumpLogicalLog $*

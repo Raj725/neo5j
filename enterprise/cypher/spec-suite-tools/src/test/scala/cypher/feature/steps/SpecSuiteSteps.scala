@@ -2,9 +2,9 @@
  * Copyright (c) 2002-2017 "Neo Technology,"
  * Network Engine for Objects in Lund AB [http://neotechnology.com]
  *
- * This file is part of Neo4j.
+ * This file is part of Neo5j.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo5j is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
@@ -28,17 +28,17 @@ import cypher.cucumber.db.DatabaseConfigProvider._
 import cypher.cucumber.db.{GraphArchive, GraphArchiveImporter, GraphArchiveLibrary, GraphFileRepository}
 import cypher.feature.parser._
 import cypher.feature.parser.matchers.ResultWrapper
-import org.neo4j.collection.RawIterator
-import org.neo4j.cypher.internal.frontend.v3_2.symbols.{CypherType, _}
-import org.neo4j.graphdb.factory.{EnterpriseGraphDatabaseFactory, GraphDatabaseSettings}
-import org.neo4j.graphdb.{GraphDatabaseService, QueryStatistics, Result, Transaction}
-import org.neo4j.kernel.api.KernelAPI
-import org.neo4j.kernel.api.exceptions.ProcedureException
-import org.neo4j.kernel.api.proc.CallableProcedure.BasicProcedure
-import org.neo4j.kernel.api.proc.{Context, Neo4jTypes}
-import org.neo4j.kernel.internal.GraphDatabaseAPI
-import org.neo4j.procedure.Mode
-import org.neo4j.test.TestEnterpriseGraphDatabaseFactory
+import org.neo5j.collection.RawIterator
+import org.neo5j.cypher.internal.frontend.v3_2.symbols.{CypherType, _}
+import org.neo5j.graphdb.factory.{EnterpriseGraphDatabaseFactory, GraphDatabaseSettings}
+import org.neo5j.graphdb.{GraphDatabaseService, QueryStatistics, Result, Transaction}
+import org.neo5j.kernel.api.KernelAPI
+import org.neo5j.kernel.api.exceptions.ProcedureException
+import org.neo5j.kernel.api.proc.CallableProcedure.BasicProcedure
+import org.neo5j.kernel.api.proc.{Context, Neo5jTypes}
+import org.neo5j.kernel.internal.GraphDatabaseAPI
+import org.neo5j.procedure.Mode
+import org.neo5j.test.TestEnterpriseGraphDatabaseFactory
 import org.opencypher.tools.tck.TCKCucumberTemplate
 import org.opencypher.tools.tck.constants.TCKStepDefinitions._
 import org.scalatest.{FunSuiteLike, Matchers}
@@ -216,28 +216,28 @@ trait SpecSuiteSteps extends FunSuiteLike with Matchers with TCKCucumberTemplate
 
   private def formatColumns(columns: List[String]) = columns.map(column => s"'${column.replace("'", "\\'")}'")
 
-  private def asKernelSignature(parsedSignature: ProcedureSignature): org.neo4j.kernel.api.proc.ProcedureSignature = {
-    val builder = org.neo4j.kernel.api.proc.ProcedureSignature.procedureSignature(parsedSignature.namespace.toArray, parsedSignature.name)
+  private def asKernelSignature(parsedSignature: ProcedureSignature): org.neo5j.kernel.api.proc.ProcedureSignature = {
+    val builder = org.neo5j.kernel.api.proc.ProcedureSignature.procedureSignature(parsedSignature.namespace.toArray, parsedSignature.name)
     builder.mode(Mode.READ)
     parsedSignature.inputs.foreach { case (name, tpe) => builder.in(name, asKernelType(tpe)) }
     parsedSignature.outputs match {
       case Some(fields) => fields.foreach { case (name, tpe) => builder.out(name, asKernelType(tpe)) }
-      case None => builder.out(org.neo4j.kernel.api.proc.ProcedureSignature.VOID)
+      case None => builder.out(org.neo5j.kernel.api.proc.ProcedureSignature.VOID)
     }
     builder.build()
   }
 
-  private def asKernelType(tpe: CypherType):  Neo4jTypes.AnyType = tpe match {
-    case CTMap => Neo4jTypes.NTMap
-    case CTNode => Neo4jTypes.NTNode
-    case CTRelationship => Neo4jTypes.NTRelationship
-    case CTPath => Neo4jTypes.NTPath
-    case ListType(innerTpe) => Neo4jTypes.NTList(asKernelType(innerTpe))
-    case CTString => Neo4jTypes.NTString
-    case CTBoolean => Neo4jTypes.NTBoolean
-    case CTNumber => Neo4jTypes.NTNumber
-    case CTInteger => Neo4jTypes.NTInteger
-    case CTFloat => Neo4jTypes.NTFloat
+  private def asKernelType(tpe: CypherType):  Neo5jTypes.AnyType = tpe match {
+    case CTMap => Neo5jTypes.NTMap
+    case CTNode => Neo5jTypes.NTNode
+    case CTRelationship => Neo5jTypes.NTRelationship
+    case CTPath => Neo5jTypes.NTPath
+    case ListType(innerTpe) => Neo5jTypes.NTList(asKernelType(innerTpe))
+    case CTString => Neo5jTypes.NTString
+    case CTBoolean => Neo5jTypes.NTBoolean
+    case CTNumber => Neo5jTypes.NTNumber
+    case CTInteger => Neo5jTypes.NTInteger
+    case CTFloat => Neo5jTypes.NTFloat
   }
 
   object graphImporter extends GraphArchiveImporter {

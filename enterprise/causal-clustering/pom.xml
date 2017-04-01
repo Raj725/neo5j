@@ -2,26 +2,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-        <groupId>org.neo4j</groupId>
+        <groupId>org.neo5j</groupId>
         <artifactId>parent</artifactId>
         <version>3.2.0-SNAPSHOT</version>
         <relativePath>../..</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>neo4j-causal-clustering</artifactId>
-    <name>Neo4j - Causal Clustering</name>
+    <artifactId>neo5j-causal-clustering</artifactId>
+    <name>Neo5j - Causal Clustering</name>
     <version>3.2.0-SNAPSHOT</version>
 
-    <description>This component provides the means to set up a cluster of Neo4j instances that act together
+    <description>This component provides the means to set up a cluster of Neo5j instances that act together
         as a cluster, providing cluster with RAFT consensus for the core machines and eventual
         consistency for the read replicas.
     </description>
-    <url>http://components.neo4j.org/${project.artifactId}/${project.version}/</url>
+    <url>http://components.neo5j.org/${project.artifactId}/${project.version}/</url>
     <packaging>jar</packaging>
 
 
     <scm>
-        <url>https://github.com/neo4j/neo4j/tree/3.1/enterprise/causal-clustering</url>
+        <url>https://github.com/neo5j/neo5j/tree/3.1/enterprise/causal-clustering</url>
     </scm>
 
     <licenses>
@@ -46,26 +46,26 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-com</artifactId>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j-com</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-command-line</artifactId>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j-command-line</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-dbms</artifactId>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j-dbms</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-consistency-check</artifactId>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j-consistency-check</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
@@ -87,81 +87,81 @@
         </dependency>
 
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-io</artifactId>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j-io</artifactId>
             <scope>test</scope>
             <type>test-jar</type>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-kernel</artifactId>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j-kernel</artifactId>
             <version>${project.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-common</artifactId>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j-common</artifactId>
             <version>${project.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-cypher</artifactId>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j-cypher</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-com</artifactId>
-            <version>${project.version}</version>
-            <type>test-jar</type>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-enterprise-kernel</artifactId>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j-com</artifactId>
             <version>${project.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-security-enterprise</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-logging</artifactId>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j-enterprise-kernel</artifactId>
             <version>${project.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-backup</artifactId>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j-security-enterprise</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-backup</artifactId>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j-logging</artifactId>
             <version>${project.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-cypher</artifactId>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j-backup</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j-backup</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.neo5j</groupId>
+            <artifactId>neo5j-cypher</artifactId>
             <version>${project.version}</version>
             <type>test-jar</type>
             <scope>test</scope>

@@ -2,9 +2,9 @@
  * Copyright (c) 2002-2017 "Neo Technology,"
  * Network Engine for Objects in Lund AB [http://neotechnology.com]
  *
- * This file is part of Neo4j.
+ * This file is part of Neo5j.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo5j is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -27,12 +27,12 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.neo4j.graphalgo.impl.util.PathImpl;
-import org.neo4j.graphdb.GraphDatabaseService;
-import org.neo4j.graphdb.Node;
-import org.neo4j.graphdb.Path;
-import org.neo4j.graphdb.Relationship;
-import org.neo4j.graphdb.RelationshipType;
+import org.neo5j.graphalgo.impl.util.PathImpl;
+import org.neo5j.graphdb.GraphDatabaseService;
+import org.neo5j.graphdb.Node;
+import org.neo5j.graphdb.Path;
+import org.neo5j.graphdb.Relationship;
+import org.neo5j.graphdb.RelationshipType;
 
 public class SimpleGraphBuilder
 {

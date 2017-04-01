@@ -3,9 +3,9 @@
   Copyright (c) 2002-2016 "Neo Technology,"
    Network Engine for Objects in Lund AB [http://neotechnology.com]
   
-   This file is part of Neo4j.
+   This file is part of Neo5j.
   
-   Neo4j is free software: you can redistribute it and/or modify
+   Neo5j is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation, either version 3 of the License, or
    (at your option) any later version.
@@ -21,34 +21,34 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.neo4j.app</groupId>
-  <artifactId>neo4j-server</artifactId>
+  <groupId>org.neo5j.app</groupId>
+  <artifactId>neo5j-server</artifactId>
   <version>3.2.0-SNAPSHOT</version>
-  <name>Neo4j - Server</name>
-  <description>Standalone Neo4j server application.</description>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <name>Neo5j - Server</name>
+  <description>Standalone Neo5j server application.</description>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <packaging>jar</packaging>
 
   <properties>
-    <bundle.namespace>org.neo4j.server</bundle.namespace>
+    <bundle.namespace>org.neo5j.server</bundle.namespace>
     <short-name>server</short-name>
     <version-package>server.impl</version-package>
     <license-text.header>GPL-3-header.txt</license-text.header>
     <licensing.prepend.text>notice-gpl-prefix.txt</licensing.prepend.text>
     <docs-plugin.filter>true</docs-plugin.filter>
 
-    <neo4j.version>${project.version}</neo4j.version>
-    <neo4j-browser.version>2.0.0-M11</neo4j-browser.version>
+    <neo5j.version>${project.version}</neo5j.version>
+    <neo5j-browser.version>2.0.0-M11</neo5j-browser.version>
 
-    <neo4j-server.mainClass>org.neo4j.server.CommunityEntryPoint</neo4j-server.mainClass>
+    <neo5j-server.mainClass>org.neo5j.server.CommunityEntryPoint</neo5j-server.mainClass>
     <neo-server.home>target/generated-resources/appassembler/jsw</neo-server.home>
     <neo-server.confdir>target/test-classes/etc/neo-server</neo-server.confdir>
 
@@ -60,9 +60,9 @@
   </properties>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <licenses>
@@ -87,8 +87,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j</artifactId>
       <version>${project.version}</version>
       <type>pom</type>
     </dependency>
@@ -96,56 +96,56 @@
     <dependency>
       <!-- We need this one, or transitive dependencies of kernel
         will end up in the test scope. -->
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-security</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-security</artifactId>
       <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-dbms</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-dbms</artifactId>
       <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-command-line</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-command-line</artifactId>
       <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
+      <groupId>org.neo5j</groupId>
       <artifactId>server-api</artifactId>
       <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-cypher</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-cypher</artifactId>
       <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-bolt</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-bolt</artifactId>
       <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j.client</groupId>
-      <artifactId>neo4j-browser</artifactId>
-      <version>${neo4j-browser.version}</version>
+      <groupId>org.neo5j.client</groupId>
+      <artifactId>neo5j-browser</artifactId>
+      <version>${neo5j-browser.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-shell</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-shell</artifactId>
       <version>${project.version}</version>
     </dependency>
 
@@ -243,47 +243,47 @@
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-security</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-security</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-logging</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-logging</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-common</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-common</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-io</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-io</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-bolt</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-bolt</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
@@ -332,11 +332,11 @@
           </execution>
         </executions>
         <configuration>
-          <mainClass>${neo4j-server.mainClass}</mainClass>
+          <mainClass>${neo5j-server.mainClass}</mainClass>
           <classpathScope>test</classpathScope>
           <arguments>
-            <argument>--config-dir=${basedir}/neo4j-home/conf</argument>
-            <argument>--home-dir=${basedir}/neo4j-home</argument>
+            <argument>--config-dir=${basedir}/neo5j-home/conf</argument>
+            <argument>--home-dir=${basedir}/neo5j-home</argument>
           </arguments>
         </configuration>
       </plugin>
@@ -377,7 +377,7 @@
       </plugin>
 
       <plugin>
-        <groupId>org.neo4j.build.plugins</groupId>
+        <groupId>org.neo5j.build.plugins</groupId>
         <artifactId>license-maven-plugin</artifactId>
         <configuration>
           <strictCheck>true</strictCheck>
@@ -405,7 +405,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>${neo4j-server.mainClass}</mainClass>
+                  <mainClass>${neo5j-server.mainClass}</mainClass>
                 </manifest>
               </archive>
               <excludes>
@@ -449,11 +449,11 @@
           <groups>
             <group>
               <title>Server</title>
-              <packages>org.neo4j.server:org.neo4j.server.*</packages>
+              <packages>org.neo5j.server:org.neo5j.server.*</packages>
             </group>
             <group>
               <title>Server REST Interface</title>
-              <packages>org.neo4j.server.rest:org.neo4j.server.rest.*</packages>
+              <packages>org.neo5j.server.rest:org.neo5j.server.rest.*</packages>
             </group>
           </groups>
         </configuration>
@@ -527,9 +527,9 @@
       <id>initial-build</id>
       <repositories>
         <repository>
-          <id>neo4j-dev</id>
-          <name>Neo4j Developer Repository</name>
-          <url>http://m2.neo4j.org/content/groups/everything/</url>
+          <id>neo5j-dev</id>
+          <name>Neo5j Developer Repository</name>
+          <url>http://m2.neo5j.org/content/groups/everything/</url>
         </repository>
       </repositories>
     </profile>
@@ -541,9 +541,9 @@
       <url>http://download.java.net/maven/2/</url>
     </repository>
     <repository>
-      <id>neo4j-release-repository</id>
-      <name>Neo4j Maven 2 release repository</name>
-      <url>http://m2.neo4j.org/content/repositories/releases</url>
+      <id>neo5j-release-repository</id>
+      <name>Neo5j Maven 2 release repository</name>
+      <url>http://m2.neo5j.org/content/repositories/releases</url>
       <releases>
         <enabled>true</enabled>
       </releases>
@@ -552,9 +552,9 @@
       </snapshots>
     </repository>
     <repository>
-      <id>neo4j-snapshot-repository</id>
-      <name>Neo4j Maven 2 snapshot repository</name>
-      <url>http://m2.neo4j.org/content/repositories/snapshots</url>
+      <id>neo5j-snapshot-repository</id>
+      <name>Neo5j Maven 2 snapshot repository</name>
+      <url>http://m2.neo5j.org/content/repositories/snapshots</url>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>

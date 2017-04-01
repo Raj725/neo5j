@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+NEO5J_BIN=/usr/share/neo5j/bin
+SCRIPT_NAME="$(basename "$0")"
+SCRIPT_PATH=""${NEO5J_BIN}"/"${SCRIPT_NAME}""
+
+[ -r /etc/default/neo5j ] && . /etc/default/neo5j
+
+NEO5J_HOME="${NEO5J_HOME:-/var/lib/neo5j}" NEO5J_CONF="${NEO5J_CONF:-/etc/neo5j}" exec "${SCRIPT_PATH}" "$@"

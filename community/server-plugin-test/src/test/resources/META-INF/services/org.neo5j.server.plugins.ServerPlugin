@@ -1,0 +1,2 @@
+org.neo5j.server.plugins.FunctionalTestPlugin
+org.neo5j.server.plugins.GraphCloner

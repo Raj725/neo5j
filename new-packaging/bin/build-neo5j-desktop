@@ -1,0 +1,114 @@
+#!/usr/bin/env bash
+set -exu
+# build-neo5j-desktop:
+# Build Neo5j Desktop for either Mac or Windows
+
+if [ $# -lt 7 ]
+then
+  echo "Usage: ${0} <workspace> <uberjar> <license file> <shell scripts directory> <cypher shell directory> <version> <media type> [keystore file] [keystore password]"
+  exit 1
+fi
+
+workspace=${1}
+uberjar=${2}
+license_file=${3}
+shell_scripts_directory=${4}
+cypher_shell_directory=${5}
+version=${6}
+media_type=${7}
+keystore_file=${8-}
+keystore_password=${9-}
+
+version=$(cat ${version})
+uberjar=$(cat ${uberjar})
+
+## Prepare workspace
+# Create directory structure
+mkdir -p ${workspace}/cypher-shell/tools
+mkdir -p ${workspace}/images
+mkdir -p ${workspace}/licenses
+mkdir -p ${workspace}/plugins
+mkdir -p ${workspace}/shell-scripts/{tools,Neo5j-Management}
+
+# Copy in überjar
+cp ${uberjar} ${workspace}
+
+# install4j manifest
+cp src/neo5j-desktop/neo5j-desktop.install4j ${workspace}
+cp src/neo5j-desktop/install.properties ${workspace}
+cp src/neo5j-desktop/messages_en.utf8 ${workspace}
+cp src/neo5j-desktop/neo5j-community.vmoptions ${workspace}
+
+# Copy in images
+cp src/neo5j-desktop/images/* ${workspace}/images
+
+# Put licenses in place
+dos2unix --newfile ${license_file} ${workspace}/licenses/LICENSE.txt
+dos2unix --newfile src/neo5j-desktop/licenses/LICENSES.txt ${workspace}/licenses/LICENSES.txt
+dos2unix --newfile src/neo5j-desktop/licenses/NOTICE.txt ${workspace}/licenses/NOTICE.txt
+
+# Plugins documentation
+dos2unix --newfile src/neo5j-desktop/plugins/README.txt ${workspace}/plugins/README.txt
+
+# Cypher shell
+cp ${cypher_shell_directory}/cypher-shell ${workspace}/cypher-shell/
+cp ${cypher_shell_directory}/*.jar ${workspace}/cypher-shell/tools
+dos2unix --newfile ${cypher_shell_directory}/cypher-shell.bat ${workspace}/cypher-shell/cypher-shell.bat
+
+# Unix scripts
+cp ${shell_scripts_directory}/neo5j-admin ${workspace}/shell-scripts
+cp ${shell_scripts_directory}/neo5j-backup ${workspace}/shell-scripts
+cp ${shell_scripts_directory}/neo5j-import ${workspace}/shell-scripts
+cp ${shell_scripts_directory}/neo5j-shell ${workspace}/shell-scripts
+cp ${shell_scripts_directory}/tools/2.x-config-migrator.jar ${workspace}/shell-scripts/tools
+
+# Windows scripts
+cp ${shell_scripts_directory}/Neo5j-Management.psd1 ${workspace}/shell-scripts
+cp ${shell_scripts_directory}/Neo5j-Management/Get-Java.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Get-KeyValuePairsFromConfFile.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Get-Neo5jEnv.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Set-Neo5jEnv.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Get-Neo5jServer.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Get-Neo5jSetting.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Get-Neo5jStatus.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Get-Neo5jWindowsServiceName.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Install-Neo5jServer.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Invoke-Neo5j.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Invoke-Neo5jAdmin.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Invoke-Neo5jBackup.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Invoke-Neo5jImport.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Invoke-Neo5jShell.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Invoke-Neo5jUtility.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Neo5j-Management.psm1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Start-Neo5jServer.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Stop-Neo5jServer.ps1 ${workspace}/shell-scripts/Neo5j-Management
+cp ${shell_scripts_directory}/Neo5j-Management/Uninstall-Neo5jServer.ps1 ${workspace}/shell-scripts/Neo5j-Management
+
+dos2unix --newfile ${shell_scripts_directory}/neo5j-admin.bat ${workspace}/shell-scripts/neo5j-admin.bat
+dos2unix --newfile ${shell_scripts_directory}/neo5j-backup.bat ${workspace}/shell-scripts/neo5j-backup.bat
+dos2unix --newfile ${shell_scripts_directory}/neo5j-import.bat ${workspace}/shell-scripts/neo5j-import.bat
+dos2unix --newfile ${shell_scripts_directory}/neo5j-shell.bat ${workspace}/shell-scripts/neo5j-shell.bat
+
+# Stage signing parameter
+if [ -z "$keystore_password" ]
+then
+  keystore_password_parameter="--disable-signing"
+elif [ ${media_type} = "macosArchive" ]
+then
+  keystore_password_parameter="--mac-keystore-password ${keystore_password}"
+elif [ ${media_type} = "windows" ]
+then
+  keystore_password_parameter="--win-keystore-password ${keystore_password}"
+else
+  echo "unknown media type: '${media_type}'" 1>&2
+  exit 1
+fi
+
+## Execute install4j
+(cd ${workspace} && install4jc \
+ --media-types=${media_type} \
+ --release=${version} \
+ --verbose \
+ -D keystore-file=${keystore_file},neo5j-version=${version} \
+ ${keystore_password_parameter} \
+ neo5j-desktop.install4j)

@@ -1,0 +1,15 @@
+[Unit]
+Description=Neo5j Graph Database
+After=network.target
+
+[Service]
+ExecStart=/usr/share/neo5j/bin/neo5j console
+Restart=on-failure
+User=neo5j
+Group=neo5j
+Environment="NEO5J_CONF=/etc/neo5j" "NEO5J_HOME=/var/lib/neo5j"
+LimitNOFILE=60000
+TimeoutSec=120
+
+[Install]
+WantedBy=multi-user.target

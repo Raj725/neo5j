@@ -2,9 +2,9 @@
  * Copyright (c) 2002-2017 "Neo Technology,"
  * Network Engine for Objects in Lund AB [http://neotechnology.com]
  *
- * This file is part of Neo4j.
+ * This file is part of Neo5j.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo5j is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -23,9 +23,9 @@ import java.util.Collection;
 import java.util.Collections;
 
 import org.apache.commons.configuration.Configuration;
-import org.neo4j.graphdb.GraphDatabaseService;
-import org.neo4j.server.plugins.Injectable;
-import org.neo4j.server.plugins.PluginLifecycle;
+import org.neo5j.graphdb.GraphDatabaseService;
+import org.neo5j.server.plugins.Injectable;
+import org.neo5j.server.plugins.PluginLifecycle;
 
 public class DummyPluginInitializer implements PluginLifecycle
 {

@@ -1,0 +1,2 @@
+org.neo5j.kernel.ha.management.HighAvailabilityBean
+org.neo5j.kernel.ha.management.BranchedStoreBean

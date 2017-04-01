@@ -1,0 +1,2 @@
+org.neo5j.server.rest.management.console.ShellSessionCreator
+org.neo5j.server.rest.management.console.CypherSessionCreator

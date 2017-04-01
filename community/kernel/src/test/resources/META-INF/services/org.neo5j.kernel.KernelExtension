@@ -1,0 +1,2 @@
+org.neo5j.kernel.DummyExtension
+org.neo5j.kernel.OtherExtension

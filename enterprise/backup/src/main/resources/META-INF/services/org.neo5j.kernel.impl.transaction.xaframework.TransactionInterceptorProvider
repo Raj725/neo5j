@@ -1,0 +1,2 @@
+org.neo5j.backup.log.VerifyingTransactionInterceptorProvider
+org.neo5j.backup.log.InconsistencyLoggingTransactionInterceptorProvider

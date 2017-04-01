@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>cypher-parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../../community/cypher/</relativePath>
@@ -13,12 +13,12 @@
   <artifactId>cypher-enterprise-parent</artifactId>
   <version>3.2.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Neo4j - Enterprise Cypher Build</name>
-  <description>Project that builds the Neo4j Cypher modules as part of the Enterprise distribution.</description>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <name>Neo5j - Enterprise Cypher Build</name>
+  <description>Project that builds the Neo5j Cypher modules as part of the Enterprise distribution.</description>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <properties>
-    <bundle.namespace>org.neo4j.cypher</bundle.namespace>
+    <bundle.namespace>org.neo5j.cypher</bundle.namespace>
     <short-name>community-cypher-build</short-name>
     <license-text.header>AGPL-3-header.txt</license-text.header>
     <docs-plugin.skip>true</docs-plugin.skip>
@@ -26,9 +26,9 @@
   </properties>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <profiles>
@@ -87,16 +87,16 @@
       </plugin>
 
       <plugin>
-        <groupId>org.neo4j.build.plugins</groupId>
+        <groupId>org.neo5j.build.plugins</groupId>
         <artifactId>clirr-maven-plugin</artifactId>
         <configuration>
           <includes>
-            <include>org/neo4j/cypher</include>
+            <include>org/neo5j/cypher</include>
           </includes>
 
           <excludes>
             <!-- Ignore all Cypher internals -->
-            <exclude>org/neo4j/cypher/internal/*</exclude>
+            <exclude>org/neo5j/cypher/internal/*</exclude>
           </excludes>
         </configuration>
       </plugin>
@@ -232,48 +232,48 @@
         <scope>test</scope>
       </dependency>
 
-      <!-- neo4j -->
+      <!-- neo5j -->
 
       <dependency>
-        <groupId>org.neo4j</groupId>
-        <artifactId>neo4j-kernel</artifactId>
+        <groupId>org.neo5j</groupId>
+        <artifactId>neo5j-kernel</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.neo4j</groupId>
-        <artifactId>neo4j-kernel</artifactId>
-        <version>${project.version}</version>
-        <type>test-jar</type>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.neo4j</groupId>
-        <artifactId>neo4j-common</artifactId>
+        <groupId>org.neo5j</groupId>
+        <artifactId>neo5j-kernel</artifactId>
         <version>${project.version}</version>
         <type>test-jar</type>
         <scope>test</scope>
       </dependency>
       <dependency>
-        <groupId>org.neo4j</groupId>
-        <artifactId>neo4j-io</artifactId>
+        <groupId>org.neo5j</groupId>
+        <artifactId>neo5j-common</artifactId>
         <version>${project.version}</version>
         <type>test-jar</type>
         <scope>test</scope>
       </dependency>
       <dependency>
-        <groupId>org.neo4j</groupId>
-        <artifactId>neo4j-graphviz</artifactId>
+        <groupId>org.neo5j</groupId>
+        <artifactId>neo5j-io</artifactId>
+        <version>${project.version}</version>
+        <type>test-jar</type>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.neo5j</groupId>
+        <artifactId>neo5j-graphviz</artifactId>
         <version>${project.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
-        <groupId>org.neo4j</groupId>
-        <artifactId>neo4j-lucene-index</artifactId>
+        <groupId>org.neo5j</groupId>
+        <artifactId>neo5j-lucene-index</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.neo4j</groupId>
-        <artifactId>neo4j-graph-algo</artifactId>
+        <groupId>org.neo5j</groupId>
+        <artifactId>neo5j-graph-algo</artifactId>
         <version>${project.version}</version>
       </dependency>
 

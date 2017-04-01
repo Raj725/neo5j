@@ -1,5 +1,5 @@
 # LDIF Export for dc=example,dc=com
-# Server: Neo4j Test LDAP Server (10.0.2.15)
+# Server: Neo5j Test LDAP Server (10.0.2.15)
 # Search Scope: sub
 # Search Filter: (objectClass=*)
 # Total Entries: 14
@@ -72,16 +72,16 @@ objectclass: organizationalUnit
 objectclass: top
 ou: users
 
-# Entry 10: cn=neo4j,ou=users,dc=example,dc=com
-dn: cn=neo4j,ou=users,dc=example,dc=com
-cn:  neo4j
+# Entry 10: cn=neo5j,ou=users,dc=example,dc=com
+dn: cn=neo5j,ou=users,dc=example,dc=com
+cn:  neo5j
 gidnumber: 503
-homedirectory: /home/users/neo4j
+homedirectory: /home/users/neo5j
 objectclass: inetOrgPerson
 objectclass: posixAccount
 objectclass: top
-sn: neo4j
-uid: neo4j
+sn: neo5j
+uid: neo5j
 uidnumber: 1003
 userpassword: {MD5}6ZoYxCjLONXyYIU2eJIuAw==
 

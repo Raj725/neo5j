@@ -1,0 +1,2 @@
+org.neo5j.jmx.impl.PrimitivesBean
+org.neo5j.jmx.impl.StoreFileBean

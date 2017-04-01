@@ -2,34 +2,34 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
 
-  <groupId>org.neo4j</groupId>
+  <groupId>org.neo5j</groupId>
   <artifactId>server-api</artifactId>
   <version>3.2.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
-  <name>Neo4j - Server API</name>
+  <name>Neo5j - Server API</name>
   <description>Interfaces and baseclasses needed to create your own extensions.</description>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <properties>
     <short-name>server-api</short-name>
     <version-package>server.impl.api</version-package>
-    <bundle.namespace>org.neo4j.server</bundle.namespace>
+    <bundle.namespace>org.neo5j.server</bundle.namespace>
     <license-text.header>GPL-3-header.txt</license-text.header>
     <docs-plugin.skip>true</docs-plugin.skip>
     <licensing.prepend.text>notice-gpl-prefix.txt</licensing.prepend.text>
   </properties>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <licenses>
@@ -54,8 +54,8 @@ the relevant Commercial Agreement.
 
   <dependencies>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
     </dependency>
 
@@ -71,7 +71,7 @@ the relevant Commercial Agreement.
     </dependency>
 
     <dependency>
-      <groupId>org.neo4j.3rdparty.javax.ws.rs</groupId>
+      <groupId>org.neo5j.3rdparty.javax.ws.rs</groupId>
       <artifactId>jsr311-api</artifactId>
     </dependency>
 

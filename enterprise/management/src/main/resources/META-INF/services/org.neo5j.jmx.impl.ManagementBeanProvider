@@ -1,0 +1,6 @@
+org.neo5j.management.impl.LockManagerBean
+org.neo5j.management.impl.IndexSamplingManagerBean
+org.neo5j.management.impl.MemoryMappingBean
+org.neo5j.management.impl.TransactionManagerBean
+org.neo5j.management.impl.PageCacheBean
+org.neo5j.management.impl.DiagnosticsBean

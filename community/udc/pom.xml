@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.neo4j</groupId>
-  <artifactId>neo4j-udc</artifactId>
-  <name>Neo4j - Usage Data Collection</name>
+  <groupId>org.neo5j</groupId>
+  <artifactId>neo5j-udc</artifactId>
+  <name>Neo5j - Usage Data Collection</name>
   <version>3.2.0-SNAPSHOT</version>
 
   <description>Collects simple statistics about server deployment.</description>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <properties>
-    <bundle.namespace>org.neo4j.ext.udc</bundle.namespace>
+    <bundle.namespace>org.neo5j.ext.udc</bundle.namespace>
     <short-name>udc</short-name>
     <version-package>udc.impl</version-package>
     <license-text.header>GPL-3-header.txt</license-text.header>
@@ -26,9 +26,9 @@
   <packaging>jar</packaging>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <licenses>
@@ -76,17 +76,17 @@
             <phase>package</phase>
           </execution>
           <execution>
-            <id>forNeo4j</id>
-            <!-- to be used for downloading from Neo4j.org -->
+            <id>forNeo5j</id>
+            <!-- to be used for downloading from Neo5j.org -->
             <goals>
               <goal>single</goal>
             </goals>
             <configuration>
               <appendAssemblyId>false</appendAssemblyId>
               <filters>
-                <filter>${project.basedir}/src/main/assembly/forNeo4j.properties</filter>
+                <filter>${project.basedir}/src/main/assembly/forNeo5j.properties</filter>
               </filters>
-              <finalName>${project.artifactId}-${project.version}-neo4j</finalName>
+              <finalName>${project.artifactId}-${project.version}-neo5j</finalName>
               <ignoreDirFormatExtensions>true</ignoreDirFormatExtensions>
               <descriptors>
                 <descriptor>src/main/assembly/assembly.xml</descriptor>
@@ -109,9 +109,9 @@
             <configuration>
               <artifacts>
                 <artifact>
-                  <file>${project.build.directory}/${project.artifactId}-${project.version}-neo4j.jar</file>
+                  <file>${project.build.directory}/${project.artifactId}-${project.version}-neo5j.jar</file>
                   <type>jar</type>
-                  <classifier>neo4j</classifier>
+                  <classifier>neo5j</classifier>
                 </artifact>
               </artifacts>
             </configuration>
@@ -119,16 +119,16 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.neo4j.build.plugins</groupId>
+        <groupId>org.neo5j.build.plugins</groupId>
         <artifactId>clirr-maven-plugin</artifactId>
         <configuration>
           <includes>
-            <include>org/neo4j/ext/udc</include>
+            <include>org/neo5j/ext/udc</include>
           </includes>
 
           <excludes>
             <!-- Some constants (not terribly public) were made irrelevant and removed in 2.1 -->
-            <exclude>org/neo4j/ext/udc/UdcConstants</exclude>
+            <exclude>org/neo5j/ext/udc/UdcConstants</exclude>
           </excludes>
         </configuration>
       </plugin>
@@ -137,8 +137,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
@@ -162,15 +162,15 @@
       <artifactId>junit</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-io</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-io</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>

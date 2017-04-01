@@ -1,22 +1,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
-  <artifactId>neo4j-lucene-index</artifactId>
+  <artifactId>neo5j-lucene-index</artifactId>
   <version>3.2.0-SNAPSHOT</version>
 
-  <name>Neo4j - Lucene Index</name>
+  <name>Neo5j - Lucene Index</name>
   <description>
-Integration layer between Neo4j and Lucene, providing one possible implementation of the Index API.
+Integration layer between Neo5j and Lucene, providing one possible implementation of the Index API.
   </description>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <properties>
-    <bundle.namespace>org.neo4j.index</bundle.namespace>
+    <bundle.namespace>org.neo5j.index</bundle.namespace>
     <short-name>lucene-index</short-name>
     <version-package>index.impl.lucene</version-package>
     <license-text.header>GPL-3-header.txt</license-text.header>
@@ -27,9 +27,9 @@ Integration layer between Neo4j and Lucene, providing one possible implementatio
   <packaging>jar</packaging>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <licenses>
@@ -54,34 +54,34 @@ the relevant Commercial Agreement.
 
   <dependencies>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-kernel</artifactId>
-      <version>${project.version}</version>
-      <type>test-jar</type>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-logging</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-kernel</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-io</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-logging</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-common</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-io</artifactId>
+      <version>${project.version}</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-common</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
@@ -142,15 +142,15 @@ the relevant Commercial Agreement.
       </plugin>
 
       <plugin>
-        <groupId>org.neo4j.build.plugins</groupId>
+        <groupId>org.neo5j.build.plugins</groupId>
         <artifactId>clirr-maven-plugin</artifactId>
         <configuration>
           <includes>
-            <include>org/neo4j/index/lucene/*</include>
-            <include>org/neo4j/index/lucene/unsafe/batchinsert/*</include>
+            <include>org/neo5j/index/lucene/*</include>
+            <include>org/neo5j/index/lucene/unsafe/batchinsert/*</include>
           </includes>
           <excludes>
-            <exclude>org/neo4j/index/lucene/LuceneLabelScanStoreBuilder</exclude>
+            <exclude>org/neo5j/index/lucene/LuceneLabelScanStoreBuilder</exclude>
           </excludes>
         </configuration>
       </plugin>

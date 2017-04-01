@@ -2,9 +2,9 @@
  * Copyright (c) 2002-2017 "Neo Technology,"
  * Network Engine for Objects in Lund AB [http://neotechnology.com]
  *
- * This file is part of Neo4j.
+ * This file is part of Neo5j.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo5j is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
@@ -52,7 +52,7 @@ class paramsParserTest extends ParsingTestSupport {
   test("should parse float special values") {
     paramsParser("Inf") should equal(Double.PositiveInfinity)
     paramsParser("-Inf") should equal(Double.NegativeInfinity)
-    // TODO NaN -- pending implementing the final form in Neo4j
+    // TODO NaN -- pending implementing the final form in Neo5j
   }
 
   test("should parse boolean") {

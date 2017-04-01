@@ -21,7 +21,7 @@ _**Adding a background to the Mac installer:**_
     ln -s /Applications "Applications"
 
 8 - Now, open two finder windows. One showing the .background folder, the other the DMG top-level folder. Open View Options for the latter and select Picture in the Background radio box. Then, **without** changing the focus of the View Options window, drag the background picture from .background to the "drag image here" box.
-![](https://s3-eu-west-1.amazonaws.com/build-service.neo4j.org/tutorial/dmgstyling.png)
+![](https://s3-eu-west-1.amazonaws.com/build-service.neo5j.org/tutorial/dmgstyling.png)
 
 9 - Adjust the icons to your liking.
 
@@ -33,7 +33,7 @@ _**Adding a background to the Mac installer:**_
 >At this point, our work with the read/write DMG is finished. We should now delete it and also remove it from the Trash. If we don't do this, subsequent tests will automatically mount this DMG again. This is due to the "alias" feature in Mac OS X. The .DS_Store contains an alias to the configured background image and as long as the original DMG still exists somewhere, it will open it from the template DMG instead of from the newly generated DMG. 
 
 12 - Open your install4j file. Under Media -> <NameOfYourMacInstaller> -> Edit Media File -> Installer Options -> Additional Files in DMG add the DS_Store file as .DS_Store, the background picture as .background/<picturename> (the name **must** be the same as the one in the read/write dmg) and the Applications symlink.
-![](https://s3-eu-west-1.amazonaws.com/build-service.neo4j.org/tutorial/additionalfiles.png)
+![](https://s3-eu-west-1.amazonaws.com/build-service.neo5j.org/tutorial/additionalfiles.png)
 
 13 - Save your install4j project and create the DMG. If everything went well, it should be all fancy now =)
 

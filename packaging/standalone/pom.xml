@@ -2,30 +2,30 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.neo4j</groupId>
+    <groupId>org.neo5j</groupId>
     <artifactId>parent</artifactId>
     <version>3.2.0-SNAPSHOT</version>
 
     <relativePath>../..</relativePath>
   </parent>
 
-  <groupId>org.neo4j.assembly</groupId>
-  <artifactId>neo4j-standalone</artifactId>
+  <groupId>org.neo5j.assembly</groupId>
+  <artifactId>neo5j-standalone</artifactId>
   <packaging>pom</packaging>
 
-  <name>Neo4j - Server Assembler</name>
+  <name>Neo5j - Server Assembler</name>
 
   <version>3.2.0-SNAPSHOT</version>
 
-  <description>This project assembles the Neo4j stand-alone distribution,
+  <description>This project assembles the Neo5j stand-alone distribution,
     pulling together all the deliverable artifacts and packaging them
     into a downloadable installer.</description>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <url>http://components.neo5j.org/${project.artifactId}/${project.version}</url>
 
   <scm>
-    <connection>scm:git:git://github.com/neo4j/neo4j.git</connection>
-    <developerConnection>scm:git:git@github.com:neo4j/neo4j.git</developerConnection>
-    <url>https://github.com/neo4j/neo4j</url>
+    <connection>scm:git:git://github.com/neo5j/neo5j.git</connection>
+    <developerConnection>scm:git:git@github.com:neo5j/neo5j.git</developerConnection>
+    <url>https://github.com/neo5j/neo5j</url>
   </scm>
 
   <modules>
@@ -34,25 +34,25 @@
   </modules>
 
   <properties>
-    <short-name>neo4j-standalone</short-name>
+    <short-name>neo5j-standalone</short-name>
     <docs-plugin.skip>true</docs-plugin.skip>
 
     <!-- Document substitution properties are in document.properties file -->
 
     <!-- other filter properties -->
-    <neo4j.version>${project.version}</neo4j.version>
+    <neo5j.version>${project.version}</neo5j.version>
 
-    <!-- conf/neo4j.conf filter properties -->
+    <!-- conf/neo5j.conf filter properties -->
     <default.http.port>7474</default.http.port>
     <default.https.port>7473</default.https.port>
 
-    <org.neo4j.webservice.packages>org.neo4j.rest.web</org.neo4j.webservice.packages>
+    <org.neo5j.webservice.packages>org.neo5j.rest.web</org.neo5j.webservice.packages>
 
     <!-- Runtime properties. These are used to bootstrap the server. All other configuration should happen through a configuration file. Each of these should have a sensible default, so that the server can operate without them defined. -->
-    <neo4j.home>${project.build.directory}/neo4j</neo4j.home>
-    <neo4j.confdir>${neo4j.home}/conf</neo4j.confdir> <!-- needed? -->
-    <neo4j.datadir>${neo4j.home}/data</neo4j.datadir> <!-- needed? -->
-    <neo4j.logdir>${neo4j.datadir}/log</neo4j.logdir> <!-- needed? -->
+    <neo5j.home>${project.build.directory}/neo5j</neo5j.home>
+    <neo5j.confdir>${neo5j.home}/conf</neo5j.confdir> <!-- needed? -->
+    <neo5j.datadir>${neo5j.home}/data</neo5j.datadir> <!-- needed? -->
+    <neo5j.logdir>${neo5j.datadir}/log</neo5j.logdir> <!-- needed? -->
     <skip.shell.tests>false</skip.shell.tests>
 
   </properties>
@@ -127,7 +127,7 @@
       </plugin>
 
       <plugin>
-        <groupId>org.neo4j.build.plugins</groupId>
+        <groupId>org.neo5j.build.plugins</groupId>
         <artifactId>license-maven-plugin</artifactId>
       </plugin>
 
@@ -143,14 +143,14 @@
       </plugin>
 
       <plugin>
-        <groupId>org.neo4j.build.plugins</groupId>
+        <groupId>org.neo5j.build.plugins</groupId>
         <artifactId>licensing-maven-plugin</artifactId>
         <configuration>
           <failIfDisliked>true</failIfDisliked>
           <failIfMissing>true</failIfMissing>
           <plainTextReport>true</plainTextReport>
           <prependText>notice-agpl-prefix.txt</prependText>
-          <excludedGroups>^((org.neo4j){1}|(org.neo4j.app){1}|(org.neo4j.server.plugin){1}|(org.neo4j.assembly){1})$</excludedGroups>
+          <excludedGroups>^((org.neo5j){1}|(org.neo5j.app){1}|(org.neo5j.server.plugin){1}|(org.neo5j.assembly){1})$</excludedGroups>
         </configuration>
         <executions>
           <execution>
@@ -166,7 +166,7 @@
                 <licensingRequirementFile>licensing-requirements-browser.xml</licensingRequirementFile>
                 <licensingRequirementFile>licensing-requirements-oss.xml</licensingRequirementFile>
               </licensingRequirementFiles>
-              <thirdPartyLicensingFilename>${project.artifactId}-${neo4j.version}-oss.txt</thirdPartyLicensingFilename>
+              <thirdPartyLicensingFilename>${project.artifactId}-${neo5j.version}-oss.txt</thirdPartyLicensingFilename>
             </configuration>
           </execution>
           <execution>
@@ -183,7 +183,7 @@
                 <licensingRequirementFile>licensing-requirements-win.xml</licensingRequirementFile>
                 <licensingRequirementFile>licensing-requirements-oss.xml</licensingRequirementFile>
               </licensingRequirementFiles>
-              <thirdPartyLicensingFilename>${project.artifactId}-${neo4j.version}-oss-win.txt</thirdPartyLicensingFilename>
+              <thirdPartyLicensingFilename>${project.artifactId}-${neo5j.version}-oss-win.txt</thirdPartyLicensingFilename>
             </configuration>
           </execution>
           <execution>
@@ -202,9 +202,9 @@
                 <licensingRequirementFile>licensing-requirements-js.xml</licensingRequirementFile>
                 <licensingRequirementFile>licensing-requirements-browser.xml</licensingRequirementFile>
               </licensingRequirementFiles>
-              <thirdPartyLicensingFilename>${project.artifactId}-${neo4j.version}-NOTICE.txt</thirdPartyLicensingFilename>
+              <thirdPartyLicensingFilename>${project.artifactId}-${neo5j.version}-NOTICE.txt</thirdPartyLicensingFilename>
               <listPrependText>list-prefix.txt</listPrependText>
-              <listReport>${project.artifactId}-${neo4j.version}-LICENSES.txt</listReport>
+              <listReport>${project.artifactId}-${neo5j.version}-LICENSES.txt</listReport>
             </configuration>
           </execution>
           <execution>
@@ -220,7 +220,7 @@
                 <licensingRequirementFile>licensing-requirements-browser.xml</licensingRequirementFile>
                 <licensingRequirementFile>licensing-requirements-com.xml</licensingRequirementFile>
               </licensingRequirementFiles>
-              <thirdPartyLicensingFilename>${project.artifactId}-${neo4j.version}.txt</thirdPartyLicensingFilename>
+              <thirdPartyLicensingFilename>${project.artifactId}-${neo5j.version}.txt</thirdPartyLicensingFilename>
             </configuration>
           </execution>
           <execution>
@@ -237,13 +237,13 @@
                 <licensingRequirementFile>licensing-requirements-win.xml</licensingRequirementFile>
                 <licensingRequirementFile>licensing-requirements-com.xml</licensingRequirementFile>
               </licensingRequirementFiles>
-              <thirdPartyLicensingFilename>${project.artifactId}-${neo4j.version}-win.txt</thirdPartyLicensingFilename>
+              <thirdPartyLicensingFilename>${project.artifactId}-${neo5j.version}-win.txt</thirdPartyLicensingFilename>
             </configuration>
           </execution>
         </executions>
         <dependencies>
           <dependency>
-            <groupId>org.neo4j.build</groupId>
+            <groupId>org.neo5j.build</groupId>
             <artifactId>licensecheck-config</artifactId>
             <version>${project.version}</version>
           </dependency>
@@ -277,9 +277,9 @@
 
   <repositories>
     <repository>
-      <id>neo4j-release-repository</id>
-      <name>Neo4j Maven 2 release repository</name>
-      <url>http://m2.neo4j.org/content/repositories/releases</url>
+      <id>neo5j-release-repository</id>
+      <name>Neo5j Maven 2 release repository</name>
+      <url>http://m2.neo5j.org/content/repositories/releases</url>
       <releases>
         <enabled>true</enabled>
       </releases>
@@ -288,9 +288,9 @@
       </snapshots>
     </repository>
     <repository>
-      <id>neo4j-snapshot-repository</id>
-      <name>Neo4j Maven 2 snapshot repository</name>
-      <url>http://m2.neo4j.org/content/repositories/snapshots</url>
+      <id>neo5j-snapshot-repository</id>
+      <name>Neo5j Maven 2 snapshot repository</name>
+      <url>http://m2.neo5j.org/content/repositories/snapshots</url>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
@@ -302,8 +302,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-import-tool</artifactId>
+      <groupId>org.neo5j</groupId>
+      <artifactId>neo5j-import-tool</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>
@@ -321,7 +321,7 @@
         <plugins>
           <plugin>
             <artifactId>ease-maven-plugin</artifactId>
-            <groupId>org.neo4j.build.plugins</groupId>
+            <groupId>org.neo5j.build.plugins</groupId>
             <executions>
               <execution>
                 <id>freeze-artifacts</id>

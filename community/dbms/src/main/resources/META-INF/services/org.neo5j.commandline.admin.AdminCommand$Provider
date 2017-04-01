@@ -1,0 +1,4 @@
+org.neo5j.commandline.dbms.ImportCommandProvider
+org.neo5j.commandline.dbms.DumpCommandProvider
+org.neo5j.commandline.dbms.LoadCommandProvider
+org.neo5j.commandline.dbms.VersionCommandProvider

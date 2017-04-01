@@ -1,0 +1,6 @@
+org.neo5j.server.security.enterprise.auth.plugin.TestAuthenticationPlugin
+org.neo5j.server.security.enterprise.auth.plugin.TestCacheableAuthenticationPlugin
+org.neo5j.server.security.enterprise.auth.plugin.TestCustomCacheableAuthenticationPlugin
+org.neo5j.server.security.enterprise.auth.plugin.TestCombinedAuthPlugin
+org.neo5j.server.security.enterprise.auth.plugin.TestCustomParametersAuthenticationPlugin
+org.neo5j.server.security.enterprise.auth.plugin.TestCredentialsOnlyPlugin

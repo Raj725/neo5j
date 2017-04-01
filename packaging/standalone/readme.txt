@@ -1,14 +1,14 @@
-Neo4j Stand-alone Project
+Neo5j Stand-alone Project
 =========================
 
-This project assembles the Neo4j stand-alone distribution, pulling together all
+This project assembles the Neo5j stand-alone distribution, pulling together all
 the deliverable artifacts and packaging them into a downloadable installer.
 
 Deliverable artifacts included:
 
-* neo4j server - start/stop-able standalone neo4j server
-* neo4j shell - text based shell for accessing the server
-* neo4j libs - java library files
+* neo5j server - start/stop-able standalone neo5j server
+* neo5j shell - text based shell for accessing the server
+* neo5j libs - java library files
 
 Building
 --------

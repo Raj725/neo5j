@@ -1,0 +1,2 @@
+org.neo5j.causalclustering.readreplica.ConnectToRandomCoreServerStrategy
+org.neo5j.causalclustering.readreplica.ConnectRandomlyWithinServerGroupStrategy
